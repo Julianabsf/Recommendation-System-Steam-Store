@@ -70,4 +70,19 @@ fig1 = px.pie(platforms_select, values='count', names = 'platform',
                       title='Platforms that Steam games are available')
 st.plotly_chart(fig1)
 
+#select multiple years
 
+st.subheader('**Select multiple years**')
+years = st.multiselect(' ',options=all_years, default=all_years)
+select_year = int(years)
+
+st.subheader('What is the percentage of games for the diffenrent computer systems?')
+#Select platforms based on the select_year:
+platforms_select = platforms_count.loc[platforms_count['year'] == select_year]
+
+#Plot Pie Chart
+
+##plot the figure
+fig1 = px.pie(platforms_select, values='count', names = 'platform',
+                      title='Platforms that Steam games are available')
+st.plotly_chart(fig1)
