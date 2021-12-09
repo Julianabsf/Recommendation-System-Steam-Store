@@ -53,7 +53,8 @@ st.header("**Steam Data Overview**")
 
 all_years = steam_data.release_year.unique().tolist()
 st.subheader('**Select the years you want to explore**')
-select_year = st.multiselect(' ',options=all_years, default=all_years)
+year_options = st.selectbox('What year you want to explore', all_years)
+select_year = int(year_options)
 
 st.subheader('What is the percentage of games for the diffenrent computer systems?')
 #Select platforms based on the select_year:
