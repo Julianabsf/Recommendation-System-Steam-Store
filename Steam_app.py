@@ -58,7 +58,7 @@ On this page, you can see the results of the exploratory data analysis (EDA) and
 # Principal dataset:
 steam_data = pd.read_csv("Datasets/steam_df_clean.csv")
 # Genreal infomation dataset:
-steam_info = pd.read_csv('Datasets/steam_general.csv')
+steam_info = pd.read_csv('Datasets/steam_general.csv',index_col=0)
 # Split platforms dataset:
 platforms_count = pd.read_csv('Datasets/platforms_count.csv')
 # Split genre dataset:
@@ -106,14 +106,8 @@ with col2:
   developer_count = developer_count.rename(columns={'index':'developer', 'developer':'count'}).sort_values('count'
                                                                                                            ,ascending=False).head(15)
   #plot
-  fig2= px.bar(developer_count, y='count', x= 'developer',
-                      title='Categories that Steam games are available',
-                      color_discrete_sequence = ['#66c0f4'],
-                    labels={'description': 'Categorie', 
-                            'percent': 'Percent of Games'}).update_layout(showlegend=False, plot_bgcolor="white")
-  st.plotly_chart(fig2)
-  
-
+   bar_plot(developer_count,'developer','Game Developers Companies')
+ 
 ############################
 # Second Block
 ############################
