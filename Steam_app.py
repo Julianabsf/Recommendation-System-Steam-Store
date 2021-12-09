@@ -17,13 +17,31 @@ import warnings
 warnings.filterwarnings('ignore')
 
 #############################
-# Plots functions
+# Plots Functions
 #############################
 
+def bar_plot(df,column_name,xaxis_name,color):
+    fig = px.bar(df, y='count', x= column_name,
+                    color_discrete_sequence = [color],
+                    labels={column_name: xaxis_name, 
+                            'count': 'Total Games'}).update_layout(showlegend=False,
+                                                                          plot_bgcolor="white")
+    st.plotly_chart(fig)
+ 
+def pie_plot(df,column_name):
+    fig = px.pie(df, values='count', names = column_name,
+                      color_discrete_sequence = color_pallet).update_traces(textinfo='percent', 
+                                                                            textposition='inside',
+                                                                            textfont_size=12,
+                                                                            marker=dict(colors=color_pallet, 
+                                                                                        line=dict(color='#000000',
+                                                                                                  width=1)))
+    st.plotly_chart(fig)
 
 #############################
 # Introduction
 #############################
+
 st.set_page_config(page_title="Steam Analysis Dashboard ", 
                    layout='wide')
                    
@@ -40,7 +58,7 @@ On this page, you can see the results of the exploratory data analysis (EDA) and
 # Principal dataset:
 steam_data = pd.read_csv("Datasets/steam_df_clean.csv")
 # Genreal infomation dataset:
-steam_info = pd.read_csv('Datsets/steam_genreal.csv')
+steam_info = pd.read_csv('Datsets/steam_general.csv')
 # Split platforms dataset:
 platforms_count = pd.read_csv('Datasets/platforms_count.csv')
 # Split genre dataset:
