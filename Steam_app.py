@@ -58,7 +58,7 @@ On this page, you can see the results of the exploratory data analysis (EDA) and
 # Principal dataset:
 steam_data = pd.read_csv("Datasets/steam_df_clean.csv")
 # Genreal infomation dataset:
-steam_info = pd.read_csv('Datasets/steam_general.csv',index_col=0)
+steam_info = pd.read_csv('Datsets/steam_genreal.csv')
 # Split platforms dataset:
 platforms_count = pd.read_csv('Datasets/platforms_count.csv')
 # Split genre dataset:
@@ -119,26 +119,6 @@ with col2:
 ############################
 
 st.header("**What's your favorite Steam game?**")
-games_name = st.text_input("Type the name of your favorite game: ")
-selected_game = steam_info[steam_info['Game Name']  == games_name]
+game_name = st.text_input("Type the name of your favorite game: ")
+selected_game = steam_info[steam_info['Game Name']  == game_name]
 st.table(selected_game)
-
-
-
-##########################
-#select multiple years
-
-st.subheader('**Select multiple years**')
-years_options = st.multiselect(' ',options=all_years, default=all_years)
-select_years = int(years_options)
-
-st.subheader('What is the percentage of games for the diffenrent computer systems?')
-#Select platforms based on the select_year:
-platforms_select = platforms_count.loc[platforms_count['year'] == select_years]
-
-#Plot Pie Chart
-
-##plot the figure
-fig1 = px.pie(platforms_select, values='count', names = 'platform',
-                      title='Platforms that Steam games are available')
-st.plotly_chart(fig1)
