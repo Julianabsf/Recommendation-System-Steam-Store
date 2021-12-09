@@ -57,13 +57,15 @@ st.header("**Steam Data Overview**")
 
 steam_data = steam_data.sort_values('release_year',ascending=True)
 
-col1, col2 = st.beta_columns(2)
 
 #select one year
 all_years = steam_data.release_year.unique().tolist()
 st.subheader('**Select the years you want to explore**')
 year_options = st.selectbox('What year you want to explore', all_years)
 select_year = int(year_options)
+
+# Static plots in two columns
+col1, col2 = st.beta_columns(2)
 
 with col1:
   st.subheader('What is the percentage of games for the diffenrent computer systems?')
