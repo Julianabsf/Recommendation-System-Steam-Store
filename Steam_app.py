@@ -81,7 +81,7 @@ with col2:
   developer_count = developer_count.rename(columns={'index':'developer', 'developer':'count'}).sort_values('count'
                                                                                                            ,ascending=False).head(15)
   #plot
-  fig2= px.bar(count, y='count', x= 'developer',
+  fig2= px.bar(developer_count, y='count', x= 'developer',
                       title='Categories that Steam games are available',
                       color_discrete_sequence = ['#66c0f4'],
                     labels={'description': 'Categorie', 
