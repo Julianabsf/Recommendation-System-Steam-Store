@@ -2,15 +2,10 @@
 
 #import libraries
 
-import pandas as pd
-pd.options.mode.chained_assignment = None
-import numpy as np
-import streamlit as st
-import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
-import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
+import plotly.graph_objs as go
+import matplotlib as plt
 
 #Remove the warnings
 import warnings
