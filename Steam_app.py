@@ -35,7 +35,7 @@ On this page, you can see the results of the exploratory data analysis (EDA) and
 # Principal dataset:
 steam_data = pd.read_csv("Datasets/steam_df_clean.csv")
 # Genreal infomation dataset:
-steam_info = pd.read_csv('Datasets/steam_general.csv',index_col=0)
+steam_info = pd.read_csv('Datasets/steam_info.csv',index_col=0)
 # Split platforms dataset:
 platforms_count = pd.read_csv('Datasets/platforms_count.csv')
 # Split genre dataset:
