@@ -65,17 +65,30 @@ st.subheader('**Select the years you want to explore**')
 year_options = st.selectbox('What year you want to explore', all_years)
 select_year = int(year_options)
 
-st.subheader('What is the percentage of games for the diffenrent computer systems?')
-#Select platforms based on the select_year:
-platforms_select = platforms_count.loc[platforms_count['year'] == select_year]
-
-#Plot Pie Chart
-
-##plot the figure
-fig1 = px.pie(platforms_select, values='count', names = 'platform',
+with col1:
+  st.subheader('What is the percentage of games for the diffenrent computer systems?')
+  #Select platforms based on the select_year:
+  platforms_select = platforms_count.loc[platforms_count['year'] == select_year]
+  ##plot the figure
+  fig1 = px.pie(platforms_select, values='count', names = 'platform',
               title='Platforms that Steam games are available',
               color_discrete_sequence = color_pallet)
-st.plotly_chart(fig1)
+  st.plotly_chart(fig1)
+
+with col2:
+  developer_count = steam_data.loc[steam_data['release_year'] == select_year]
+  developer_count = developer_count.developer.value_counts().reset_index()
+  developer_count = developer_count.rename(columns={'index':'developer', 'developer':'count'}).sort_values('count'
+                                                                                                           ,ascending=False).head(15)
+  #plot
+  fig2= px.bar(count, y='count', x= 'developer',
+                      title='Categories that Steam games are available',
+                      color_discrete_sequence = ['#66c0f4'],
+                    labels={'description': 'Categorie', 
+                            'percent': 'Percent of Games'}).update_layout(showlegend=False, plot_bgcolor="white")
+   st.plotly_chart(fig2)
+
+
 
 ##########################
 #select multiple years
