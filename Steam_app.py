@@ -17,9 +17,9 @@ warnings.filterwarnings('ignore')
 
 #--------------Load the datasets-----------------------
 # Principal dataset:
-steam_data = load_data("/home/juliana/Documents/DS_Allwomen/_Final_project_dataset/steam_df_clean.csv")
+steam_data = pd.read_csv("/home/juliana/Documents/DS_Allwomen/_Final_project_dataset/steam_df_clean.csv")
 # Genreal infomation dataset:
-steam_info = load_data('/home/juliana/Documents/DS_Allwomen/_Final_project_dataset/steam_general.csv')
+steam_info = pd.read_csv('/home/juliana/Documents/DS_Allwomen/_Final_project_dataset/steam_general.csv')
 # Split platforms dataset:
 # Split genre dataset:
 # Split categories dataset:
