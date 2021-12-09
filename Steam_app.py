@@ -75,7 +75,7 @@ st.plotly_chart(fig1)
 
 st.subheader('**Select multiple years**')
 years_options = st.multiselect(' ',options=all_years, default=all_years)
-select_years = int(year_options)
+select_years = int(years_options)
 
 st.subheader('What is the percentage of games for the diffenrent computer systems?')
 #Select platforms based on the select_year:
