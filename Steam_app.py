@@ -33,7 +33,7 @@ On this page, you can see the results of the exploratory data analysis (EDA) and
 ############################
 
 # Principal dataset:
-#steam_data = pd.read_csv("/Datasets/steam_df_clean.csv")
+steam_data = pd.read_csv("Datasets/steam_df_clean.csv")
 # Genreal infomation dataset:
 steam_info = pd.read_csv('steam_general.csv')
 # Split platforms dataset:
