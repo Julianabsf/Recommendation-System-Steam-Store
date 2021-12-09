@@ -35,15 +35,15 @@ On this page, you can see the results of the exploratory data analysis (EDA) and
 # Principal dataset:
 steam_data = pd.read_csv("Datasets/steam_df_clean.csv")
 # Genreal infomation dataset:
-steam_info = pd.read_csv('steam_general.csv')
+steam_info = pd.read_csv('Datasets/steam_general.csv')
 # Split platforms dataset:
-#platforms_count = pd.read_csv('/Datasets/platforms_count.csv')
+platforms_count = pd.read_csv('Datasets/platforms_count.csv')
 # Split genre dataset:
-#genres_count = pd.read_csv('/Datasets/genres_count.csv')
+genres_count = pd.read_csv('Datasets/genres_count.csv')
 # Split categories dataset:
-#categories_count = pd.read_csv('/Datasets/categories_count.csv')
+categories_count = pd.read_csv('Datasets/categories_count.csv')
 # Split languages dataset:
-#languages_count = pd.read_csv('/Datasets/languages_count.csv')
+languages_count = pd.read_csv('Datasets/languages_count.csv')
 
 ############################
 # First Block
@@ -51,3 +51,17 @@ steam_info = pd.read_csv('steam_general.csv')
 
 st.header("**Steam Data Overview**")
 
+st.subheader('**Select the years you want to explore**')
+select_year = st.multiselect(' ',options=steam_year['release_year'], default=steam_year['release_year'])
+
+st.subheader('What is the percentage of games for the diffenrent computer systems?')
+#Select platforms based on the select_year:
+platforms_select = platforms_count.loc[platforms_count['year'] == select_year]
+platforms_select
+
+#Plot Pie Chart
+
+##plot the figure
+fig1 = px.pie(platforms_select, values='count', names = 'platform',
+                      title='Platforms that Steam games are available')
+st.plotly_chart(fig1)
