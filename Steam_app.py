@@ -106,7 +106,7 @@ with col2:
   developer_count = developer_count.rename(columns={'index':'developer', 'developer':'count'}).sort_values('count'
                                                                                                            ,ascending=False).head(15)
   #plot
-  bar_plot(developer_count,'developer','Game Developers Companies')
+  bar_plot(developer_count,'developer','Game Developers Companies','#c7d5e0')
  
 ############################
 # Second Block
