@@ -1,0 +1,557 @@
+,year,category,count
+512,2020,Single-player,7511
+545,2021,Single-player,7148
+478,2019,Single-player,5692
+444,2018,Single-player,5604
+410,2017,Single-player,4507
+514,2020,Steam Achievements,3648
+547,2021,Steam Achievements,3493
+376,2016,Single-player,3312
+446,2018,Steam Achievements,3068
+480,2019,Steam Achievements,2913
+412,2017,Steam Achievements,2646
+343,2015,Single-player,2100
+378,2016,Steam Achievements,2035
+381,2016,Steam Trading Cards,1875
+515,2020,Steam Cloud,1812
+548,2021,Steam Cloud,1689
+493,2020,Full controller support,1674
+500,2020,Multi-player,1577
+481,2019,Steam Cloud,1548
+415,2017,Steam Trading Cards,1516
+526,2021,Full controller support,1446
+447,2018,Steam Cloud,1395
+345,2015,Steam Achievements,1347
+413,2017,Steam Cloud,1332
+533,2021,Multi-player,1298
+348,2015,Steam Trading Cards,1297
+310,2014,Single-player,1296
+466,2019,Multi-player,1224
+459,2019,Full controller support,1195
+432,2018,Multi-player,1178
+425,2018,Full controller support,1141
+504,2020,PvP,1115
+503,2020,Partial Controller Support,1090
+379,2016,Steam Cloud,1074
+391,2017,Full controller support,1036
+398,2017,Multi-player,1036
+470,2019,PvP,970
+357,2016,Full controller support,934
+436,2018,PvP,919
+435,2018,Partial Controller Support,874
+469,2019,Partial Controller Support,861
+537,2021,PvP,851
+490,2020,Co-op,845
+536,2021,Partial Controller Support,831
+346,2015,Steam Cloud,817
+402,2017,PvP,813
+364,2016,Multi-player,776
+502,2020,Online PvP,764
+523,2021,Co-op,762
+401,2017,Partial Controller Support,762
+312,2014,Steam Achievements,739
+509,2020,Shared/Split Screen,712
+315,2014,Steam Trading Cards,702
+449,2018,Steam Trading Cards,688
+324,2015,Full controller support,672
+505,2020,Remote Play Together,655
+448,2018,Steam Leaderboards,651
+468,2019,Online PvP,642
+434,2018,Online PvP,640
+535,2021,Online PvP,629
+516,2020,Steam Leaderboards,609
+456,2019,Co-op,596
+471,2019,Remote Play Together,589
+367,2016,Partial Controller Support,587
+437,2018,Remote Play Together,582
+414,2017,Steam Leaderboards,569
+400,2017,Online PvP,563
+422,2018,Co-op,555
+403,2017,Remote Play Together,554
+331,2015,Multi-player,541
+380,2016,Steam Leaderboards,538
+313,2014,Steam Cloud,529
+482,2019,Steam Leaderboards,514
+549,2021,Steam Leaderboards,509
+511,2020,Shared/Split Screen PvP,506
+388,2017,Co-op,498
+534,2021,Online Co-op,495
+542,2021,Shared/Split Screen,494
+483,2019,Steam Trading Cards,493
+501,2020,Online Co-op,474
+510,2020,Shared/Split Screen Co-op,459
+477,2019,Shared/Split Screen PvP,458
+475,2019,Shared/Split Screen,449
+538,2021,Remote Play Together,446
+407,2017,Shared/Split Screen,433
+368,2016,PvP,428
+441,2018,Shared/Split Screen,424
+443,2018,Shared/Split Screen PvP,417
+334,2015,Partial Controller Support,402
+517,2020,Steam Trading Cards,401
+409,2017,Shared/Split Screen PvP,401
+347,2015,Steam Leaderboards,376
+276,2013,Single-player,374
+445,2018,Stats,371
+369,2016,Remote Play Together,371
+354,2016,Co-op,346
+298,2014,Multi-player,339
+513,2020,Stats,319
+544,2021,Shared/Split Screen PvP,318
+467,2019,Online Co-op,316
+543,2021,Shared/Split Screen Co-op,316
+411,2017,Stats,314
+373,2016,Shared/Split Screen,305
+433,2018,Online Co-op,304
+291,2014,Full controller support,303
+366,2016,Online PvP,298
+476,2019,Shared/Split Screen Co-op,297
+550,2021,Steam Trading Cards,292
+377,2016,Stats,288
+442,2018,Shared/Split Screen Co-op,286
+479,2019,Stats,280
+546,2021,Stats,266
+399,2017,Online Co-op,263
+278,2013,Steam Achievements,262
+408,2017,Shared/Split Screen Co-op,261
+336,2015,Remote Play Together,257
+243,2012,Single-player,257
+405,2017,Remote Play on TV,249
+281,2013,Steam Trading Cards,249
+301,2014,Partial Controller Support,245
+439,2018,Remote Play on TV,243
+314,2014,Steam Leaderboards,239
+340,2015,Shared/Split Screen,231
+494,2020,In-App Purchases,223
+371,2016,Remote Play on TV,218
+151,2009,Single-player,213
+492,2020,Cross-Platform Multiplayer,213
+321,2015,Co-op,210
+212,2011,Single-player,210
+390,2017,Cross-Platform Multiplayer,210
+344,2015,Stats,202
+473,2019,Remote Play on TV,201
+375,2016,Shared/Split Screen PvP,201
+279,2013,Steam Cloud,199
+356,2016,Cross-Platform Multiplayer,192
+507,2020,Remote Play on TV,191
+426,2018,In-App Purchases,188
+460,2019,In-App Purchases,187
+519,2020,Steam Workshop,182
+182,2010,Single-player,177
+417,2017,Steam Workshop,173
+496,2020,Includes level editor,173
+394,2017,Includes level editor,172
+525,2021,Cross-Platform Multiplayer,170
+451,2018,Steam Workshop,162
+485,2019,Steam Workshop,162
+424,2018,Cross-Platform Multiplayer,161
+428,2018,Includes level editor,158
+383,2016,Steam Workshop,158
+458,2019,Cross-Platform Multiplayer,157
+245,2012,Steam Achievements,156
+462,2019,Includes level editor,155
+327,2015,Includes level editor,154
+338,2015,Remote Play on TV,154
+552,2021,Steam Workshop,154
+360,2016,Includes level editor,152
+392,2017,In-App Purchases,151
+257,2013,Full controller support,149
+529,2021,Includes level editor,148
+508,2020,Remote Play on Tablet,148
+365,2016,Online Co-op,147
+264,2013,Multi-player,147
+387,2017,Captions available,140
+303,2014,Remote Play Together,139
+527,2021,In-App Purchases,133
+374,2016,Shared/Split Screen Co-op,132
+474,2019,Remote Play on Tablet,131
+350,2015,Steam Workshop,122
+307,2014,Shared/Split Screen,121
+288,2014,Co-op,120
+506,2020,Remote Play on Phone,117
+540,2021,Remote Play on TV,116
+335,2015,PvP,116
+353,2016,Captions available,116
+421,2018,Captions available,115
+311,2014,Stats,114
+323,2015,Cross-Platform Multiplayer,114
+214,2011,Steam Achievements,112
+472,2019,Remote Play on Phone,107
+358,2016,In-App Purchases,106
+320,2015,Captions available,105
+531,2021,LAN PvP,105
+280,2013,Steam Leaderboards,104
+248,2012,Steam Trading Cards,103
+246,2012,Steam Cloud,102
+305,2014,Remote Play on TV,101
+499,2020,MMO,99
+200,2011,Multi-player,97
+121,2008,Single-player,95
+231,2012,Multi-player,95
+498,2020,LAN PvP,94
+530,2021,LAN Co-op,91
+497,2020,LAN Co-op,88
+294,2014,Includes level editor,88
+532,2021,MMO,88
+385,2016,VR Support,84
+465,2019,MMO,84
+431,2018,MMO,83
+455,2019,Captions available,83
+184,2010,Steam Achievements,82
+139,2009,Multi-player,79
+254,2013,Co-op,75
+290,2014,Cross-Platform Multiplayer,75
+333,2015,Online PvP,74
+397,2017,MMO,74
+489,2020,Captions available,74
+440,2018,Remote Play on Tablet,72
+317,2014,Steam Workshop,71
+203,2011,Partial Controller Support,69
+363,2016,MMO,69
+170,2010,Multi-player,69
+267,2013,Partial Controller Support,68
+234,2012,Partial Controller Support,67
+215,2011,Steam Cloud,67
+341,2015,Shared/Split Screen Co-op,66
+372,2016,Remote Play on Tablet,66
+522,2021,Captions available,65
+271,2013,Remote Play on TV,64
+342,2015,Shared/Split Screen PvP,64
+541,2021,Remote Play on Tablet,63
+406,2017,Remote Play on Tablet,59
+216,2011,Steam Leaderboards,56
+370,2016,Remote Play on Phone,56
+96,2007,Single-player,56
+269,2013,Remote Play Together,55
+287,2014,Captions available,55
+185,2010,Steam Cloud,53
+247,2012,Steam Leaderboards,53
+539,2021,Remote Play on Phone,52
+332,2015,Online Co-op,52
+225,2012,Full controller support,51
+438,2018,Remote Play on Phone,51
+404,2017,Remote Play on Phone,48
+173,2010,Partial Controller Support,48
+217,2011,Steam Trading Cards,47
+273,2013,Shared/Split Screen,46
+302,2014,PvP,46
+191,2011,Co-op,46
+68,2006,Single-player,45
+154,2009,Steam Cloud,44
+186,2010,Steam Leaderboards,43
+222,2012,Co-op,43
+260,2013,Includes level editor,42
+153,2009,Steam Achievements,42
+339,2015,Remote Play on Tablet,41
+283,2013,Steam Workshop,39
+464,2019,LAN PvP,37
+351,2015,VR Support,37
+330,2015,MMO,36
+256,2013,Cross-Platform Multiplayer,36
+337,2015,Remote Play on Phone,35
+277,2013,Stats,34
+300,2014,Online PvP,34
+268,2013,PvP,33
+299,2014,Online Co-op,33
+213,2011,Stats,32
+355,2016,Commentary available,30
+114,2008,Multi-player,30
+306,2014,Remote Play on Tablet,30
+156,2009,Steam Trading Cards,29
+272,2013,Remote Play on Tablet,29
+463,2019,LAN Co-op,29
+389,2017,Commentary available,28
+244,2012,Stats,28
+265,2013,Online Co-op,28
+205,2011,Remote Play Together,28
+304,2014,Remote Play on Phone,27
+123,2008,Steam Achievements,27
+266,2013,Online PvP,27
+236,2012,Remote Play Together,27
+194,2011,Full controller support,27
+84,2007,Multi-player,27
+187,2010,Steam Trading Cards,25
+238,2012,Remote Play on TV,24
+419,2017,VR Support,24
+297,2014,MMO,24
+209,2011,Shared/Split Screen,24
+183,2010,Stats,24
+309,2014,Shared/Split Screen PvP,23
+270,2013,Remote Play on Phone,23
+240,2012,Shared/Split Screen,23
+59,2006,Multi-player,22
+130,2009,Co-op,22
+491,2020,Commentary available,22
+253,2013,Captions available,22
+274,2013,Shared/Split Screen Co-op,21
+322,2015,Commentary available,21
+142,2009,Partial Controller Support,21
+429,2018,LAN Co-op,20
+396,2017,LAN PvP,20
+308,2014,Shared/Split Screen Co-op,19
+361,2016,LAN Co-op,19
+423,2018,Commentary available,19
+160,2010,Co-op,19
+430,2018,LAN PvP,18
+395,2017,LAN Co-op,17
+362,2016,LAN PvP,17
+204,2011,PvP,17
+224,2012,Cross-Platform Multiplayer,16
+292,2014,In-App Purchases,16
+175,2010,Remote Play Together,16
+239,2012,Remote Play on Tablet,16
+325,2015,In-App Purchases,15
+165,2010,Includes level editor,15
+418,2017,SteamVR Collectibles,15
+202,2011,Online PvP,15
+275,2013,Shared/Split Screen PvP,15
+382,2016,Steam Turn Notifications,14
+227,2012,Includes level editor,14
+524,2021,Commentary available,14
+250,2012,Steam Workshop,14
+235,2012,PvP,14
+318,2014,VR Support,13
+237,2012,Remote Play on Phone,13
+232,2012,Online Co-op,13
+207,2011,Remote Play on TV,13
+208,2011,Remote Play on Tablet,13
+99,2007,Steam Cloud,13
+201,2011,Online Co-op,12
+416,2017,Steam Turn Notifications,12
+179,2010,Shared/Split Screen,12
+233,2012,Online PvP,12
+384,2016,SteamVR Collectibles,12
+206,2011,Remote Play on Phone,12
+349,2015,Steam Turn Notifications,11
+155,2009,Steam Leaderboards,11
+133,2009,Full controller support,11
+143,2009,PvP,11
+174,2010,PvP,11
+457,2019,Commentary available,11
+196,2011,Includes level editor,11
+141,2009,Online PvP,11
+140,2009,Online Co-op,10
+219,2011,Steam Workshop,10
+263,2013,MMO,10
+453,2018,VR Support,10
+152,2009,Stats,10
+124,2008,Steam Cloud,10
+289,2014,Commentary available,10
+117,2008,Partial Controller Support,9
+285,2013,VR Support,9
+220,2011,Valve Anti-Cheat enabled,9
+329,2015,LAN PvP,9
+144,2009,Remote Play Together,9
+252,2012,Valve Anti-Cheat enabled,9
+163,2010,Full controller support,9
+126,2008,Steam Trading Cards,9
+72,2006,Steam Trading Cards,8
+518,2020,Steam Turn Notifications,8
+172,2010,Online PvP,8
+76,2007,Co-op,8
+145,2009,Remote Play on Phone,8
+146,2009,Remote Play on TV,8
+352,2015,Valve Anti-Cheat enabled,8
+147,2009,Remote Play on Tablet,8
+328,2015,LAN Co-op,8
+258,2013,In-App Purchases,8
+109,2008,Includes level editor,8
+132,2009,Cross-Platform Multiplayer,7
+104,2008,Co-op,7
+420,2017,Valve Anti-Cheat enabled,7
+286,2013,Valve Anti-Cheat enabled,7
+230,2012,MMO,7
+199,2011,MMO,7
+210,2011,Shared/Split Screen Co-op,7
+148,2009,Shared/Split Screen,7
+89,2007,Remote Play Together,7
+135,2009,Includes level editor,6
+71,2006,Steam Cloud,6
+454,2018,Valve Anti-Cheat enabled,6
+495,2020,Includes Source SDK,6
+87,2007,Partial Controller Support,6
+386,2016,Valve Anti-Cheat enabled,6
+295,2014,LAN Co-op,6
+520,2020,VR Support,6
+211,2011,Shared/Split Screen PvP,6
+162,2010,Cross-Platform Multiplayer,6
+177,2010,Remote Play on TV,5
+93,2007,Shared/Split Screen,5
+221,2012,Captions available,5
+296,2014,LAN PvP,5
+242,2012,Shared/Split Screen PvP,5
+452,2018,SteamVR Collectibles,5
+50,2005,Single-player,5
+450,2018,Steam Turn Notifications,5
+193,2011,Cross-Platform Multiplayer,5
+261,2013,LAN Co-op,5
+484,2019,Steam Turn Notifications,5
+98,2007,Steam Achievements,5
+178,2010,Remote Play on Tablet,5
+74,2006,Valve Anti-Cheat enabled,5
+52,2006,Co-op,5
+195,2011,In-App Purchases,4
+171,2010,Online Co-op,4
+136,2009,LAN Co-op,4
+189,2010,Valve Anti-Cheat enabled,4
+176,2010,Remote Play on Phone,4
+188,2010,Steam Workshop,4
+427,2018,Includes Source SDK,4
+181,2010,Shared/Split Screen PvP,4
+26,2001,Single-player,4
+51,2006,Captions available,4
+92,2007,Remote Play on Tablet,4
+149,2009,Shared/Split Screen Co-op,4
+223,2012,Commentary available,4
+100,2007,Steam Trading Cards,4
+262,2013,LAN PvP,4
+118,2008,PvP,4
+70,2006,Steam Achievements,4
+107,2008,Full controller support,4
+255,2013,Commentary available,4
+82,2007,Includes level editor,4
+241,2012,Shared/Split Screen Co-op,4
+393,2017,Includes Source SDK,4
+316,2014,Steam Turn Notifications,4
+293,2014,Includes Source SDK,4
+66,2006,Remote Play on Tablet,4
+319,2014,Valve Anti-Cheat enabled,4
+90,2007,Remote Play on Phone,4
+159,2010,Captions available,3
+47,2004,Valve Anti-Cheat enabled,3
+37,2004,Multi-player,3
+36,2004,Includes Source SDK,3
+95,2007,Shared/Split Screen PvP,3
+157,2009,Steam Workshop,3
+42,2004,Single-player,3
+88,2007,PvP,3
+359,2016,Includes Source SDK,3
+137,2009,LAN PvP,3
+94,2007,Shared/Split Screen Co-op,3
+554,2021,VR Support,3
+62,2006,Partial Controller Support,3
+228,2012,LAN Co-op,3
+79,2007,Full controller support,3
+65,2006,Remote Play on Phone,3
+77,2007,Commentary available,3
+116,2008,Online PvP,3
+75,2007,Captions available,3
+487,2019,VR Support,3
+129,2009,Captions available,3
+108,2008,Includes Source SDK,3
+56,2006,Includes level editor,3
+20,2000,Valve Anti-Cheat enabled,2
+16,2000,Multi-player,2
+128,2008,Valve Anti-Cheat enabled,2
+120,2008,Remote Play on TV,2
+18,2000,PvP,2
+551,2021,Steam Turn Notifications,2
+29,2003,Multi-player,2
+115,2008,Online Co-op,2
+15,1999,Valve Anti-Cheat enabled,2
+12,1999,Remote Play Together,2
+138,2009,Mods (require HL2),2
+17,2000,Online PvP,2
+24,2001,Remote Play Together,2
+9,1999,Multi-player,2
+54,2006,Cross-Platform Multiplayer,2
+150,2009,Shared/Split Screen PvP,2
+30,2003,Single-player,2
+86,2007,Online PvP,2
+326,2015,Includes Source SDK,2
+97,2007,Stats,2
+81,2007,Includes Source SDK,2
+101,2007,Steam Workshop,2
+78,2007,Cross-Platform Multiplayer,2
+103,2008,Captions available,2
+73,2006,Steam Workshop,2
+64,2006,Remote Play Together,2
+63,2006,PvP,2
+61,2006,Online PvP,2
+521,2020,Valve Anti-Cheat enabled,2
+198,2011,LAN PvP,2
+58,2006,LAN PvP,2
+197,2011,LAN Co-op,2
+190,2011,Captions available,2
+180,2010,Shared/Split Screen Co-op,2
+167,2010,LAN PvP,2
+45,2004,Steam Cloud,2
+44,2004,Steam Achievements,2
+166,2010,LAN Co-op,2
+164,2010,Includes Source SDK,2
+111,2008,LAN PvP,2
+39,2004,Remote Play Together,2
+158,2009,Valve Anti-Cheat enabled,2
+488,2019,Valve Anti-Cheat enabled,2
+528,2021,Includes Source SDK,1
+553,2021,SteamVR Collectibles,1
+0,1998,Multi-player,1
+486,2019,SteamVR Collectibles,1
+38,2004,Partial Controller Support,1
+28,2002,Single-player,1
+31,2003,Steam Cloud,1
+32,2003,Steam Trading Cards,1
+33,2003,Valve Anti-Cheat enabled,1
+34,2004,Captions available,1
+35,2004,Cross-Platform Multiplayer,1
+40,2004,Remote Play on Phone,1
+461,2019,Includes Source SDK,1
+41,2004,Remote Play on Tablet,1
+43,2004,Stats,1
+46,2004,Steam Trading Cards,1
+48,2005,Multi-player,1
+49,2005,Partial Controller Support,1
+53,2006,Commentary available,1
+27,2001,Valve Anti-Cheat enabled,1
+25,2001,Shared/Split Screen PvP,1
+23,2001,PvP,1
+22,2001,Online PvP,1
+21,2001,Multi-player,1
+19,2000,Shared/Split Screen PvP,1
+14,1999,Single-player,1
+13,1999,Shared/Split Screen PvP,1
+11,1999,PvP,1
+10,1999,Online PvP,1
+8,1998,Valve Anti-Cheat enabled,1
+7,1998,Steam Cloud,1
+6,1998,Single-player,1
+5,1998,Remote Play on Tablet,1
+4,1998,Remote Play on Phone,1
+3,1998,Remote Play Together,1
+2,1998,PvP,1
+55,2006,Includes Source SDK,1
+57,2006,LAN Co-op,1
+60,2006,Online Co-op,1
+131,2009,Commentary available,1
+284,2013,SteamVR Collectibles,1
+282,2013,Steam Turn Notifications,1
+1,1998,Online PvP,1
+259,2013,Includes Source SDK,1
+251,2012,VR Support,1
+249,2012,Steam Turn Notifications,1
+229,2012,LAN PvP,1
+226,2012,In-App Purchases,1
+218,2011,Steam Turn Notifications,1
+192,2011,Commentary available,1
+169,2010,Mods,1
+168,2010,MMO,1
+161,2010,Commentary available,1
+134,2009,Includes Source SDK,1
+127,2008,Steam Workshop,1
+67,2006,Shared/Split Screen,1
+125,2008,Steam Leaderboards,1
+122,2008,Stats,1
+119,2008,Remote Play Together,1
+113,2008,Mods (require HL2),1
+112,2008,Mods,1
+110,2008,LAN Co-op,1
+106,2008,Cross-Platform Multiplayer,1
+105,2008,Commentary available,1
+102,2007,Valve Anti-Cheat enabled,1
+91,2007,Remote Play on TV,1
+85,2007,Online Co-op,1
+83,2007,LAN PvP,1
+80,2007,In-App Purchases,1
+69,2006,Stats,1
+555,2021,Valve Anti-Cheat enabled,1
