@@ -52,6 +52,7 @@ languages_count = pd.read_csv('Datasets/languages_count.csv')
 st.header("**Steam Data Overview**")
 
 all_years = steam_data.release_year.unique().tolist()
+all_years = all_years.sort()
 st.subheader('**Select the years you want to explore**')
 year_options = st.selectbox('What year you want to explore', all_years)
 select_year = int(year_options)
@@ -59,7 +60,6 @@ select_year = int(year_options)
 st.subheader('What is the percentage of games for the diffenrent computer systems?')
 #Select platforms based on the select_year:
 platforms_select = platforms_count.loc[platforms_count['year'] == select_year]
-platforms_select
 
 #Plot Pie Chart
 
