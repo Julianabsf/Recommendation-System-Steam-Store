@@ -95,8 +95,6 @@ with col2:
 # Second Block
 ############################
 
-steam_info = steam_info.T
-
 st.header("**What's your favorite Steam game?**")
 games_name = st.text_input("Type the name of your favorite game: ")
 selected_game = steam_info[steam_info['Game Name']  == games_name]
