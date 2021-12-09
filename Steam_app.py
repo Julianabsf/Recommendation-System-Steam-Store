@@ -52,7 +52,6 @@ languages_count = pd.read_csv('Datasets/languages_count.csv')
 st.header("**Steam Data Overview**")
 
 all_years = steam_data.release_year.unique().tolist()
-all_years = all_years.sort()
 st.subheader('**Select the years you want to explore**')
 year_options = st.selectbox('What year you want to explore', all_years)
 select_year = int(year_options)
