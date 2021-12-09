@@ -86,7 +86,7 @@ with col2:
                       color_discrete_sequence = ['#66c0f4'],
                     labels={'description': 'Categorie', 
                             'percent': 'Percent of Games'}).update_layout(showlegend=False, plot_bgcolor="white")
-   st.plotly_chart(fig2)
+  st.plotly_chart(fig2)
 
 
 
