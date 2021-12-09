@@ -90,7 +90,6 @@ with col2:
                             'percent': 'Percent of Games'}).update_layout(showlegend=False, plot_bgcolor="white")
   st.plotly_chart(fig2)
 
-
 ############################
 # Second Block
 ############################
