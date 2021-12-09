@@ -51,6 +51,9 @@ languages_count = pd.read_csv('Datasets/languages_count.csv')
 
 st.header("**Steam Data Overview**")
 
+steam_data = steam_data.sort_values('release_year',ascending=True)
+
+#select one year
 all_years = steam_data.release_year.unique().tolist()
 st.subheader('**Select the years you want to explore**')
 year_options = st.selectbox('What year you want to explore', all_years)
@@ -66,3 +69,5 @@ platforms_select = platforms_count.loc[platforms_count['year'] == select_year]
 fig1 = px.pie(platforms_select, values='count', names = 'platform',
                       title='Platforms that Steam games are available')
 st.plotly_chart(fig1)
+
+
