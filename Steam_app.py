@@ -17,6 +17,29 @@ import warnings
 warnings.filterwarnings('ignore')
 
 #############################
+# Plots functions
+#############################
+
+def bar_plot(df,column_name,xaxis_name,color):
+    fig = px.bar(df, y='count', x= column_name,
+                    color_discrete_sequence = [color],
+                    labels={column_name: xaxis_name, 
+                            'count': 'Total Games'}).update_layout(showlegend=False,
+                                                                          plot_bgcolor="white")
+    st.plotly_chart(fig)
+ 
+def pie_plot(df,column_name):
+    fig = px.pie(df, values='count', names = column_name,
+                      color_discrete_sequence = color_pallet).update_traces(textinfo='percent', 
+                                                                            textposition='inside',
+                                                                            textfont_size=12,
+                                                                            marker=dict(colors=color_pallet, 
+                                                                                        line=dict(color='#000000',
+                                                                                                  width=1)))
+    st.plotly_chart(fig)
+
+
+#############################
 # Introduction
 #############################
 st.set_page_config(page_title="Steam Analysis Dashboard ", 
@@ -89,6 +112,7 @@ with col2:
                     labels={'description': 'Categorie', 
                             'percent': 'Percent of Games'}).update_layout(showlegend=False, plot_bgcolor="white")
   st.plotly_chart(fig2)
+  
 
 ############################
 # Second Block
@@ -97,7 +121,7 @@ with col2:
 st.header("**What's your favorite Steam game?**")
 games_name = st.text_input("Type the name of your favorite game: ")
 selected_game = steam_info[steam_info['Game Name']  == games_name]
-st.table(selected_game).transpose()
+st.table(selected_game)
 
 
 
