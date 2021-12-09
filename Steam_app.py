@@ -1,23 +1,18 @@
 #!/usr/bin/env python
 
-#basic libraries
+#import libraries
 
 import pandas as pd
 pd.options.mode.chained_assignment = None
 import numpy as np
 import streamlit as st
-
-#visual libraries
-
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
-import plotly.graph_objs as go
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
 #Remove the warnings
-
 import warnings
 warnings.filterwarnings('ignore')
 
