@@ -94,10 +94,13 @@ with col2:
 ############################
 # Second Block
 ############################
+
 st.header("**What's your favorite Steam game?**")
 games_name = st.text_input("Type the name of your favorite game: ")
-selected_game = steam_info[steam_info['Game Name']  == games_name]
-st.table(selected_game)  
+selected_game = steam_info[steam_info['Game Name']  == games_name].T
+st.table(selected_game)
+
+
 
 ##########################
 #select multiple years
