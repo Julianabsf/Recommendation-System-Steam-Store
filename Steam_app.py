@@ -45,6 +45,10 @@ categories_count = pd.read_csv('Datasets/categories_count.csv')
 # Split languages dataset:
 languages_count = pd.read_csv('Datasets/languages_count.csv')
 
+
+#steam color pallet
+color_pallet = ['#1b2838','#c7d5e0','#2a475e','#66c0f4']
+
 ############################
 # First Block
 ############################
@@ -52,6 +56,8 @@ languages_count = pd.read_csv('Datasets/languages_count.csv')
 st.header("**Steam Data Overview**")
 
 steam_data = steam_data.sort_values('release_year',ascending=True)
+
+col1, col2 = st.beta_columns(2)
 
 #select one year
 all_years = steam_data.release_year.unique().tolist()
@@ -67,7 +73,8 @@ platforms_select = platforms_count.loc[platforms_count['year'] == select_year]
 
 ##plot the figure
 fig1 = px.pie(platforms_select, values='count', names = 'platform',
-                      title='Platforms that Steam games are available')
+              title='Platforms that Steam games are available',
+              color_discrete_sequence = color_pallet)
 st.plotly_chart(fig1)
 
 ##########################
