@@ -2,10 +2,10 @@
 
 #import libraries
 
-import seaborn as sns
 import plotly.express as px
 import plotly.graph_objs as go
 import matplotlib as plt
+import seaborn as sns
 
 #Remove the warnings
 import warnings
