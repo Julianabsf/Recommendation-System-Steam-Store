@@ -118,16 +118,16 @@ with col1:
   platforms_select = platforms_count[platforms_count.year.isin(year_options)]
 
   ##plot the figure
-  pie_plot(platforms_select,'platform')
+  #pie_plot(platforms_select,'platform')
   
 
-with col2:
-  developer_count = steam_data.loc[steam_data['release_year'] == select_year]
-  developer_count = developer_count.developer.value_counts().reset_index()
-  developer_count = developer_count.rename(columns={'index':'developer', 'developer':'count'}).sort_values('count'
-                                                                                                           ,ascending=False).head(15)
+#with col2:
+  #developer_count = steam_data.loc[steam_data['release_year'] == select_year]
+  #developer_count = developer_count.developer.value_counts().reset_index()
+  #developer_count = developer_count.rename(columns={'index':'developer', 'developer':'count'}).sort_values('count'
+                                                                                                           #,ascending=False).head(15)
   #plot
-  bar_plot(developer_count,'developer','Game Developers Companies','#c7d5e0')
+  #bar_plot(developer_count,'developer','Game Developers Companies','#c7d5e0')
  
     
     
