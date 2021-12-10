@@ -171,13 +171,15 @@ with col2:
     games_by_rating = steam_data.loc[steam_data.release_year.isin(select_year)]
     games_by_rating = games_by_rating.sort_values('user_score', ascending=False)
     #Histogram
-    fig1 = px.histogram(games_by_rating, x="user_score")
+    fig1 = px.histogram(games_by_rating, x="user_score",nbins=30,
+                        color_discrete_sequence=['#1b2838']).update_layout(showlegend=False,plot_bgcolor="white")
     st.plotly_chart(fig1)
 
 with col2:
     st.subheader('How is the price distribuited?')
     games_price = steam_data[steam_data.release_year.isin(select_year)]
-    fig2 =sns.distplot(games_price['final_price'])
+    fig2 =px.histogram(games_by_rating, x="final_eur",nbins=30,
+                       color_discrete_sequence=['#1b2838']).update_layout(showlegend=False,plot_bgcolor="white")
     st.pyplot(fig2)
 
     
