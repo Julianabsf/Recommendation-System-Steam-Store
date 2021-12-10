@@ -193,8 +193,9 @@ st.header("**What's your favorite Steam game?**")
 
 game_names = steam_info['Game Name'].unique().tolist()
 games_options = st.selectbox('What year you want to explore', game_names)
-#selected_game = steam_info[steam_info['Game Name']  == game_name]
-st.table(games_options)
+selected_game = steam_info[steam_info['Game Name']  == game_options]
+selected_games
+#st.table(games_options)
 
 
 
