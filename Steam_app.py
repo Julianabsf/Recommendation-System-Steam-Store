@@ -95,17 +95,18 @@ st.header("**Steam Data Overview**")
 
 steam_data = steam_data.sort_values('release_year',ascending=True)
 
-
-#select one year
+####select one year
 #all_years = steam_data.release_year.unique().tolist()
 #year_options = st.selectbox('What year you want to explore', all_years)
 #select_year = int(year_options)
 
+####Select multiple years
 all_years = steam_data.release_year.unique().tolist()
 st.subheader('**Select the years you want to explore**')
 select_year = st.multiselect(' ',options=all_years, default=all_years)
 year_options = steam_data[steam_data.release_year.isin(select_year)]
-
+print(type(select_year))
+print(select_year)
 
 # Static plots in two columns
 col1, col2 = st.beta_columns(2)
@@ -113,12 +114,12 @@ col1, col2 = st.beta_columns(2)
 with col1:
   st.subheader('What is the percentage of games for the diffenrent computer systems?')
   #Select platforms based on the select_year:
+  #platforms_select = platforms_select = platforms_count.loc[platforms_count['year'] == select_year]
   platforms_select = platforms_count[platforms_count.year.isin(year_options)]
+
   ##plot the figure
-  fig1 = px.pie(platforms_select, values='count', names = 'platform',
-              title='Platforms that Steam games are available',
-              color_discrete_sequence = color_pallet)
-  st.plotly_chart(fig1)
+  pie_plot(platforms_select,'platform')
+  
 
 with col2:
   developer_count = steam_data.loc[steam_data['release_year'] == select_year]
@@ -128,6 +129,8 @@ with col2:
   #plot
   bar_plot(developer_count,'developer','Game Developers Companies','#c7d5e0')
  
+    
+    
 ############################
 # Second Block
 ############################
@@ -136,6 +139,8 @@ st.header("**What's your favorite Steam game?**")
 game_name = st.text_input("Type the name of your favorite game: ")
 selected_game = steam_info[steam_info['Game Name']  == game_name]
 st.table(selected_game)
+
+
 
 ############################
 # Third Block - Recommendation System
