@@ -80,7 +80,7 @@ categories_count = pd.read_csv('Datasets/categories_count.csv')
 #Split languages dataset:
 languages_count = pd.read_csv('Datasets/languages_count.csv')
 #Model dataset:
-steam_recommend = pd.read_csv('Datasets/steam_recommend')
+steam_recommend = pd.read_csv('Datasets/steam_recommend.csv', index_col=0)
 
 
 #steam color pallet
@@ -139,5 +139,6 @@ st.table(selected_game)
 
 st.header("**Recommendation System**")
 game_id = st.text_input("Type the game id: ")
-selected_id = steam_info[steam_info['Game Name']  == game_name]
+selected_id = steam_recommend[steam_recommend['steam_appid']  == game_id]
+print(selected_id)
 
