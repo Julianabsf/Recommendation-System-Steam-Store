@@ -425,6 +425,4 @@ st.table(genre_recommendations)
 [Linkedin]('https://www.linkedin.com/in/juliana-figueira-6b0b00216/')
 [twitter]('https://github.com/Julianabsf')
 
-"""
-st.sidebar.markdown(text)
- 
+""" 
