@@ -14,6 +14,13 @@ import plotly.graph_objs as go
 import matplotlib as plt
 import seaborn as sns
 
+#Model libraries
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import TfidfVectorizer
+from scipy.sparse import csr_matrix
+
+from sklearn.neighbors import NearestNeighbors
 
 #Remove the warnings
 import warnings
