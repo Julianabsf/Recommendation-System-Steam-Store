@@ -120,6 +120,22 @@ with col1:
    #plot
    bar_plot(categories_select,'category','Game Categories','#2a475e')
 
+with col1:
+    st.subheader('What are the games with the biggest average playtime?')
+    game_playtime = steam_data[steam_data.release_year.isin(select_year)]
+    game_playtime = game_playtime.sort_values('average_forever', ascending=False).head(10)
+    #plot
+    bar_plot(game_playtime,'average_forever','Average Game Playtimes','#2a475e')
+
+with col1:
+    st.subheader('Free and Non-Free Games?')
+    free_games = steam_data[steam_data.release_year.isin(select_year)]
+    free_games = free_games.is_free.value_counts().reset_index()
+    free_games = free_games.rename(columns={'index':'free', 'is_free':'count'}).replace({False: 'Pay Games',
+                                                                                         True: ' Free Games'})
+    #plot
+    pie_plot(free_games,'free')
+    
 
 with col2:
   st.subheader('Who are the games delopers?')
@@ -146,19 +162,31 @@ with col2:
     #plot
     bar_plot(languages_select,'language','Supported Languages','#66c0f4')
 
+with col2:
+    st.subheader('What are the games user scores?')
+    games_by_rating = steam_data.loc[steam_data['release_year'] == select_year]
+    games_by_rating = games_by_rating.sort_values('average_forever', ascending=False)
+    sns.distplot(games_by_rating['user_score']);
+
+with col2:
+    st.subheader('How is the price distribuited?')
+    games_price = steam_data[steam_data.release_year.isin(select_year)]
+    games_price =sns.distplot(games_price['final_price']);
+
     
 ############################
 # Second Block
 ############################
 
 ####select one year
-#all_years = steam_data.release_year.unique().tolist()
-#year_options = st.selectbox('What year you want to explore', all_years)
-#select_year = int(year_options)
 
 st.header("**What's your favorite Steam game?**")
-game_name = st.text_input("Type the name of your favorite game: ")
-selected_game = steam_info[steam_info['Game Name']  == game_name]
+
+game_names = steam_info['Game Name'].unique().tolist()
+games_options = st.selectbox('What year you want to explore', game_names)
+
+#game_name = st.text_input("Type the name of your favorite game: ")
+#selected_game = steam_info[steam_info['Game Name']  == game_name]
 st.table(selected_game)
 
 
@@ -357,10 +385,9 @@ tfidf = TfidfVectorizer()
 #fitting all the words that we have for all genres using the TF-IDF approach
 tfidf.fit(steam_recommend['genre'])
 
-
 st.header("**Recommendation System**")
 game_name = st.text_input("Type the game name: ")
-selected_id = steam_recommend.loc[steam_recommend['name']  == game_name].steam_appid.unique()[0]
+selected_id = steam_recommend.loc[steam_recommend['name']  == game_name].steam_appid.unique()
 
 sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_recommend, 'user_score')
 recommendations = top_recommend(steam_recommend,selected_id,k=500)
