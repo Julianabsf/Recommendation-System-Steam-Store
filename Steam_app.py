@@ -180,6 +180,8 @@ def create_sparse_matrix(df, column):
     
     return sparse_matrix, user_mapper, game_mapper, user_inv_mapper, game_inv_mapper
 
+
+
 def recommended_games(df,game_id, sparse_matrix, k,metric='cosine'):
     
     """
@@ -229,6 +231,8 @@ def recommended_games(df,game_id, sparse_matrix, k,metric='cosine'):
         
     return neighbours_title
 
+
+
 def top_recommend(df,game_id,k):
     
     """  
@@ -261,6 +265,8 @@ def top_recommend(df,game_id,k):
     top_recommendations = pd.concat([(df[df.steam_appid == game_id]), top_recommendations])
     
     return top_recommendations
+
+
 
 def get_similarity_genre(df_recommend, tfidf):
     
@@ -295,6 +301,8 @@ def get_similarity_genre(df_recommend, tfidf):
     
     return five_recommendations
 
+
+
 def print_description(df, df_recommend,tfidf):
     
     """
@@ -313,10 +321,11 @@ def print_description(df, df_recommend,tfidf):
     
     return five_descriptiton
 
-#####################################################3
+#####################################################
+
 st.header("**Recommendation System**")
-#game_id = st.text_input("Type the game id: ")
-#selected_id = steam_recommend[steam_recommend['steam_appid']  == game_id]
+game_name = st.text_input("Type the game name: ")
+selected_id = steam_recommend[steam_recommend['name']  == game_name].steam_appid.unique()
 
 tfidf = TfidfVectorizer()
 #fitting all the words that we have for all genres using the TF-IDF approach
