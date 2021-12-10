@@ -16,10 +16,7 @@ import seaborn as sns
 
 #Recommendation System libraries
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.neighbors import NearestNeighbors
-from scipy.sparse import csr_matrix
+
 
 #Remove the warnings
 import warnings
