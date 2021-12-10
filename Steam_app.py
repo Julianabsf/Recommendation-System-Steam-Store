@@ -333,4 +333,5 @@ tfidf.fit(steam_recommend['genre'])
 
 sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_recommend, 'user_score')
 cities_recommend = top_recommend(steam_recommend,255710,k=500)
-print_description(steam_recommend, cities_recommend,tfidf)
+description = print_description(steam_recommend, cities_recommend,tfidf)
+st.table(description)
