@@ -170,14 +170,14 @@ with col2:
     st.subheader('What are the games user scores?')
     games_by_rating = steam_data.loc[steam_data.release_year.isin(select_year)]
     games_by_rating = games_by_rating.sort_values('average_forever', ascending=False)
-    plot_rating = sns.distplot(games_by_rating['user_score']);
-    st.plotly_chart(plot_rating)
+    fig1 = sns.distplot(games_by_rating['user_score'])
+    st.plotly_chart(fig1)
 
 with col2:
     st.subheader('How is the price distribuited?')
     games_price = steam_data[steam_data.release_year.isin(select_year)]
-    games_price =sns.distplot(games_price['final_price']);
-    st.plotly_chart(games_price)
+    fig2 =sns.distplot(games_price['final_price'])
+    st.plotly_chart(fig2)
 
     
 ############################
