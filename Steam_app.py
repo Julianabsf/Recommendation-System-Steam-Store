@@ -337,6 +337,6 @@ if selected_id != 0:
         recommendations = top_recommend(steam_recommend,selected_id,k=500)
         genre_recommendations = print_description(steam_recommend, recommendations,tfidf)
         st.table(genre_recommendations)
-    except:
+else:
     break
         
