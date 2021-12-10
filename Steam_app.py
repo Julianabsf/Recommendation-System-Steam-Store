@@ -93,13 +93,6 @@ color_pallet = ['#1b2838','#c7d5e0','#2a475e','#66c0f4']
 
 st.header("**Steam Data Overview**")
 
-steam_data = steam_data.sort_values('release_year',ascending=True)
-
-####select one year
-#all_years = steam_data.release_year.unique().tolist()
-#year_options = st.selectbox('What year you want to explore', all_years)
-#select_year = int(year_options)
-
 ####Select multiple years
 all_years = steam_data.release_year.unique().tolist()
 st.subheader('**Select the years you want to explore**')
@@ -121,6 +114,11 @@ with col1:
   #plot 
   bar_plot(genres_count,'genre','Game Genres','#2a475e')
 
+with col1:
+   categories_select = categories_count[categories_count.year.isin.select_year].sort_values('count',ascending=False)
+   #plot
+   bar_plot(categories_select,'category','Game Categories','#2a475e')
+
 
 with col2:
   developer_count = steam_data[steam_data.release_year.isin(select_year)]
@@ -138,10 +136,21 @@ with col2:
  
     #plot
     bar_plot(publisher_count,'publisher','Game Publishers Companies','#66c0f4')
+ 
+with col2:
+    languages_select = languages_count[languages_count.year.isin(select_year)].sort_values('count',ascending=False)
+    #plot
+    bar_plot(languages_select,'languages','Supported Languages','#66c0f4')
+
     
 ############################
 # Second Block
 ############################
+
+####select one year
+#all_years = steam_data.release_year.unique().tolist()
+#year_options = st.selectbox('What year you want to explore', all_years)
+#select_year = int(year_options)
 
 st.header("**What's your favorite Steam game?**")
 game_name = st.text_input("Type the name of your favorite game: ")
