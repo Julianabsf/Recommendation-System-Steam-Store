@@ -117,7 +117,8 @@ with col1:
 
 with col1:
   st.subheader('What is the common genre?')
-  genres_select = genres_count[genres_count.year.isin(select_year)]
+  genres_select = genres_count[genres_count.year.isin(select_year)].sort_values('count',ascending=False)
+  #plot 
   bar_plot(genres_count,'genre','Game Genres','#2a475e')
 
 
@@ -129,9 +130,15 @@ with col2:
   #plot
   bar_plot(developer_count,'developer','Game Developers Companies','#c7d5e0')
 
-  
+with col2:
+    publisher_count = steam_data[steam_data.release_year.isin(select_year)]
+    publisher_count = publisher_count.publisher.value_counts().reset_index()
+    publisher_count = publisher_count.rename(columns={'index':'developer', 
+                                                  'publisher':'count'}).sort_values('count'
+                                                                                    ,ascending=False).head(15)
  
-    
+    #plot
+    bar_plot(publisher_count,'publisher','Game Publishers Companies','#66c0f4')
     
 ############################
 # Second Block
