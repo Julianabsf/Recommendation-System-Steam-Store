@@ -118,7 +118,7 @@ with col1:
 with col1:
   st.subheader('What is the common genre?')
   genres_select = genres_count[genres_count.year.isin(select_year)]
-  bar_plot(developer_count,'genre','Game Genres','#2a475e')
+  bar_plot(genres_count,'genre','Game Genres','#2a475e')
 
 
 with col2:
