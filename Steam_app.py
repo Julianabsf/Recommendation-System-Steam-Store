@@ -407,4 +407,19 @@ recommendations = top_recommend(steam_recommend,selected_id,k=500)
 genre_recommendations = print_description(steam_recommend, recommendations,tfidf)
 st.table(genre_recommendations)
 
+###########################
+# About the Author
+###########################
+
+st.sidebar.subheader("About Author")
+    text = """\
+    - Name: Juliana Figueira
+    - Feature: Always make cool stuff
+    - Occupation: Data Scientist
+    
+    - [**Linkedin**](https://www.linkedin.com/in/juliana-figueira-6b0b00216/)
+    - [**Github**](https://github.com/Julianabsf)
+    **Thanks for your viewing!**
+      """
+    st.sidebar.markdown(text)
         
