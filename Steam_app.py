@@ -411,3 +411,10 @@ st.table(genre_recommendations)
 # About the Author
 ###########################
 
+st.sidebar.header("**About the Author**")
+
+"""
+[Titanic] (https://en.wikipedia.org/wiki/Titanic)
+Name: Juliana Figueira
+Ocupation: Junior Data Scientist
+"""
