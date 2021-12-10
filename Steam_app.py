@@ -262,10 +262,71 @@ def top_recommend(df,game_id,k):
     
     return top_recommendations
 
+def get_similarity_genre(df_recommend, tfidf):
+    
+    """
+     What the fuction is doing:
+     
+     Compute the cosine similarity into the games genres, and save the
+     five similar games in a data frame.
+     
+     Parameters:
+     
+     df_recommend: is the data frame that results of the function top_recommend(df,game_id,k)
+     tfidf:is the big data frame vectorized.
+     
+    """
+    
+    #get the vectors from the suggested games:
+    sparse_matrix = tfidf.transform(df_recommend['genre'])
+    
+    #re-arrange everything into a df
+    doc_term_matrix = sparse_matrix.todense() #Return a dense matrix representation of this matrix.
+    df = pd.DataFrame(doc_term_matrix, index= df_recommend.name,
+                  columns=tfidf.get_feature_names())
+    
+    #computte the cosine between each pair of games:
+    similarity = cosine_similarity(df, df) 
+    
+    #re-arrange the results into a df:
+    sim_df = pd.DataFrame(similarity,columns = df_recommend.name, index = df_recommend.name) 
+    similar = sim_df.iloc[0].sort_values(ascending= False).reset_index()
+    five_recommendations = similar.loc[1:11].head(5)
+    
+    return five_recommendations
+
+def print_description(df, df_recommend,tfidf):
+    
+    """
+    What the fuction is doing:
+    
+    Print the name and the description of the top five games recommmended
+    
+    Parameters:
+    df: the biggest data frame, that contains the role information
+    df_recommend: data frame origin in the function top_recommend(df,game_id,k)
+    
+    """
+    
+    five_games = get_similarity_genre(df_recommend, tfidf).reset_index()
+    five_descriptiton = df[df.name.isin(five_games.name)].reset_index()
+    
+    print('If you liked {} you would also like to play:'.format(df_recommend.name.iloc[0]))
+    print('=========================================================================')
+    print('  ')
+    
+    
+    for i in range(len(five_descriptiton)):
+        print(five_descriptiton.name.loc[i])
+        print('  ')
+        print(five_descriptiton.short_description.loc[i])
+        print('-------------------------------------------------------------------------')
+
 #####################################################3
 st.header("**Recommendation System**")
 #game_id = st.text_input("Type the game id: ")
 #selected_id = steam_recommend[steam_recommend['steam_appid']  == game_id]
 
 sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_recommend, 'user_score')
-top_recommend(steam_recommend,255710,k=500)
+cities_recommend = top_recommend(steam_recommend,255710,k=500)
+print_description(steam_recommend, cities_recommend,tfidf)
