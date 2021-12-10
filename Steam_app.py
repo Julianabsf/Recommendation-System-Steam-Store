@@ -419,11 +419,12 @@ st.table(genre_recommendations)
     text = """\
     - Name: 'Ivy Wang'
 - Feature: 'Always make cool stuff'
-            - Occupation: 'Data Scientist'
+- Occupation: 'Data Scientist'
     
-                - [**Linkedin**](https://www.linkedin.com/in/ivy-w-81871716b/),
-                    - [**twitter**](twitter.com/Ivy_DataCracker),
-    **Thanks for your viewing!**
+- [**Linkedin**](https://www.linkedin.com/in/ivy-w-81871716b/),
+- [**twitter**](twitter.com/Ivy_DataCracker),
+
+**Thanks for your viewing!**
 """
     st.sidebar.markdown(text)
  
