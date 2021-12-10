@@ -411,16 +411,3 @@ st.table(genre_recommendations)
 # About the Author
 ###########################
 
-"""
-    if st.sidebar.button("Click me"):
-        st.markdown(text)
-
-    st.sidebar.subheader("About Author")
-    text = """\
-    - Name: 'Ivy Wang'
-- Feature: 'Always make cool stuff'
-- Occupation: 'Data Scientist'
-    
-    
-[Linkedin]('https://www.linkedin.com/in/juliana-figueira-6b0b00216/')
-[twitter]('https://github.com/Julianabsf')""" 
