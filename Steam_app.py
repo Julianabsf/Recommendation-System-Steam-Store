@@ -411,15 +411,19 @@ st.table(genre_recommendations)
 # About the Author
 ###########################
 
-st.sidebar.subheader("About Author")
+"""
+    if st.sidebar.button("Click me"):
+        st.markdown(text)
+
+    st.sidebar.subheader("About Author")
     text = """\
     - Name: Juliana Figueira
     - Feature: Always make cool stuff
-    - Occupation: Data Scientist
+    - Occupation: Junior Data Scientist
     
     - [**Linkedin**](https://www.linkedin.com/in/juliana-figueira-6b0b00216/)
     - [**Github**](https://github.com/Julianabsf)
     **Thanks for your viewing!**
       """
     st.sidebar.markdown(text)
-        
+ 
