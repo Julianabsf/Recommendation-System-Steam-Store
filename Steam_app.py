@@ -311,16 +311,7 @@ def print_description(df, df_recommend,tfidf):
     five_games = get_similarity_genre(df_recommend, tfidf).reset_index()
     five_descriptiton = df[df.name.isin(five_games.name)].reset_index()
     
-    print('If you liked {} you would also like to play:'.format(df_recommend.name.iloc[0]))
-    print('=========================================================================')
-    print('  ')
-    
-    
-    for i in range(len(five_descriptiton)):
-        print(five_descriptiton.name.loc[i])
-        print('  ')
-        print(five_descriptiton.short_description.loc[i])
-        print('-------------------------------------------------------------------------')
+    return five_descriptiton
 
 #####################################################3
 st.header("**Recommendation System**")
