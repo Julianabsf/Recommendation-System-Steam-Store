@@ -118,7 +118,7 @@ with col1:
    st.subheader('What are the common categories?')
    categories_select = categories_count[categories_count.year.isin(select_year)].sort_values('count',ascending=False)
    #plot
-   bar_plot(categories_select,'categories','Game Categories','#2a475e')
+   bar_plot(categories_select,'category','Game Categories','#2a475e')
 
 
 with col2:
