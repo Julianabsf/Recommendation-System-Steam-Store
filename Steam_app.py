@@ -180,7 +180,7 @@ with col2:
     games_price = steam_data[steam_data.release_year.isin(select_year)]
     fig2 =px.histogram(games_price, x="final_eur",
                        color_discrete_sequence=['#1b2838']).update_layout(showlegend=False,plot_bgcolor="white")
-    st.pyplot(fig2)
+    st.plotly_chart(fig2)
 
     
 ############################
