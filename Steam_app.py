@@ -14,9 +14,6 @@ import plotly.graph_objs as go
 import matplotlib as plt
 import seaborn as sns
 
-#Recommendation System libraries
-from sklearn.feature_extraction.text import CountVectorizer
-
 
 #Remove the warnings
 import warnings
