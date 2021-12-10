@@ -411,7 +411,7 @@ st.table(genre_recommendations)
 # About the Author
 ###########################
 
-    """
+"""
     if st.sidebar.button("Click me"):
         st.markdown(text)
 
@@ -424,6 +424,6 @@ st.table(genre_recommendations)
     - [**Linkedin**](https://www.linkedin.com/in/ivy-w-81871716b/)
     - [**twitter**](twitter.com/Ivy_DataCracker)
     **Thanks for your viewing!**
-      """
+"""
     st.sidebar.markdown(text)
  
