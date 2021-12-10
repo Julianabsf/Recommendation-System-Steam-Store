@@ -125,7 +125,11 @@ with col1:
     game_playtime = steam_data[steam_data.release_year.isin(select_year)]
     game_playtime = game_playtime.sort_values('average_forever', ascending=False).head(10)
     #plot
-    bar_plot(game_playtime,'average_forever','Average Game Playtimes','#2a475e')
+    fig_playtime = px.bar(game_playtime, x='name',y='average_forever',
+                      color_discrete_sequence = ['#c7d5e0'],
+                     labels={'average_forever': 'Average playtime in minutes', 'name': 'Game Name'},
+                     title = 'Games with the biggest playtime in Steam').update_layout(showlegend=False, plot_bgcolor="white")
+    st.plotly_chart(fig_playtime)
 
 with col1:
     st.subheader('Free and Non-Free Games?')
