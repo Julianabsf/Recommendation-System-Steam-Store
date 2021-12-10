@@ -325,7 +325,9 @@ def print_description(df, df_recommend,tfidf):
 
 st.header("**Recommendation System**")
 game_name = st.text_input("Type the game name: ")
-selected_id = int(steam_recommend.loc[steam_recommend['name']  == game_name].steam_appid.unique())
+selected_id = steam_recommend.loc[steam_recommend['name']  == game_name].steam_appid.unique()
+selected_id = np.vectorize(selected_id)
+
 
 tfidf = TfidfVectorizer()
 #fitting all the words that we have for all genres using the TF-IDF approach
