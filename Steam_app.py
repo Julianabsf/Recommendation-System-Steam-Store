@@ -137,8 +137,134 @@ st.table(selected_game)
 
 ### Model Functions
 
-st.header("**Recommendation System**")
-game_id = st.text_input("Type the game id: ")
-selected_id = steam_recommend[steam_recommend['steam_appid']  == game_id]
-print(selected_id)
+def create_sparse_matrix(df, column):
+    """  
+    
+    What the fuction is doing:
+    
+    Creat the sparse matrix from the role dataset based on a specific column of it.
+    
+    Parameters:
+    
+    df: the name of the data frame
+    column: the name of the 'target' column in the data frame
+    
+    Returns:
+    
+    sparse_matrix: sparse matrix
+    user_mapper: dict that maps user id's to user indices
+    user_inv_mapper: dict that maps user indices to user id's
+    game_mapper: dict that maps games id's to game indices
+    game_inv_mapper: dict that maps game indices to game id's
+    
+    """
+    
+    #cheack user and games unique values:
+    u_id = df['id'].nunique()
+    g = df['steam_appid'].nunique()
+    
+    #creat a dictionary to map the ids and the games:
+    user_mapper = dict(zip(np.unique(df["id"]), list(range(u_id))))
+    game_mapper = dict(zip(np.unique(df["steam_appid"]), list(range(g))))
+    
+    user_inv_mapper = dict(zip(list(range(u_id)), np.unique(df["id"])))
+    game_inv_mapper = dict(zip(list(range(g)), np.unique(df["steam_appid"])))
+    
+    #convert the ids into indexs :
+    user_index = [user_mapper[i] for i in df['id']]
+    game_index = [game_mapper[i] for i in df['steam_appid']]
+    
+    #creat the sparse matrix using a column of the data frame:
+    sparse_matrix = csr_matrix((df[column], (game_index, user_index)), shape=(g, u_id))
+    
+    return sparse_matrix, user_mapper, game_mapper, user_inv_mapper, game_inv_mapper
 
+def recommended_games(df,game_id, sparse_matrix, k,metric='cosine'):
+    
+    """
+    What the fuction is doing:
+    
+    Find the neighbours from a game, based on the sparse matrix 
+    criteria set before.
+    
+    Parameters:
+    
+    df: the name of the data frame
+    game_id:the steam_appid of the game you're looking
+    sparse_matrix: the sparse matrix created before
+    k: the number of recommendations show
+    metric: the metric to find the neighbours, set as default the 'cosine'
+    
+    Returns:
+    
+    The games titles in the neighbourhood of the one pre-define
+    
+    """
+    
+    neighbour_ids = []
+    
+    game_ind = game_mapper[game_id]
+    game_to_assess = sparse_matrix[game_ind]
+    
+    # use KNN to find the games the are closed to the choosed:
+    kNN = NearestNeighbors(n_neighbors=k, metric=metric)
+    kNN.fit(sparse_matrix)
+
+    neighbour = kNN.kneighbors(game_to_assess, return_distance=False)
+    
+    # map each neighbour id with the right movie_id:
+    for i in range(1,k):
+        n = neighbour.item(i) 
+        neighbour_ids.append(game_inv_mapper[n])    
+    
+    #get the name of the recommended games:
+    game_titles = dict(zip(df['steam_appid'], df['name']))
+    game_title = game_titles[game_id]
+    
+    #append the titles into a list:
+    neighbours_title = []
+    for i in neighbour_ids:
+        neighbours_title.append(game_titles[i])
+        
+    return neighbours_title
+
+def top_recommend(df,game_id,k):
+    
+    """  
+    
+    What the fuction is doing:
+    
+    Run the function to get the top recomendations, add to the title of the games
+    other information, such as genre, saved in the first data frame, then concat
+    the informations of the 'target' game.
+    
+    Parameters:
+    
+    game_id:the steam_appid of the game you're looking
+    k:the number of recommendations show
+    df:the name of the data frame
+    
+    Returns:
+    
+    the top recommendations
+    
+    """
+    
+    #select the name of top recommendations:
+    top_recommendations = recommended_games(df,game_id, sparse_matrix, k,metric='cosine')
+    
+    #get the genre informations from the top_recommendations saved on the general dataset:
+    top_recommendations = df[df.name.isin(top_recommendations)]
+    
+    #add to this results the game we want to compare:
+    top_recommendations = pd.concat([(df[df.steam_appid == game_id]), top_recommendations])
+    
+    return top_recommendations
+
+#####################################################3
+st.header("**Recommendation System**")
+#game_id = st.text_input("Type the game id: ")
+#selected_id = steam_recommend[steam_recommend['steam_appid']  == game_id]
+
+sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_df, 'user_score')
+top_recommend(steam_df,255710,k=500)
