@@ -178,7 +178,7 @@ with col2:
 with col2:
     st.subheader('How is the price distribuited?')
     games_price = steam_data[steam_data.release_year.isin(select_year)]
-    fig2 =px.histogram(games_by_rating, x="final_eur",nbins=30,
+    fig2 =px.histogram(games_price, x="final_eur",
                        color_discrete_sequence=['#1b2838']).update_layout(showlegend=False,plot_bgcolor="white")
     st.pyplot(fig2)
 
