@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 #import libraries
 
 #basic libraries
@@ -30,11 +31,7 @@ warnings.filterwarnings('ignore')
 
 #########################
 
-primaryColor="#d33682"
-backgroundColor="#002b36"
-secondaryBackgroundColor="#586e75"
-textColor="#fafafa"
-font="sans serif"
+@st.cache(allow_output_mutation=True)
 
 #############################
 # Plots Functions
@@ -105,7 +102,7 @@ st.header("**Steam Data Overview**")
 ####Select multiple years
 all_years = steam_data.release_year.unique().tolist()
 st.subheader('**Select the years you want to explore**')
-select_year = st.multiselect(' ',options=all_years, default=all_years)
+select_year = st.sidebar.multiselect(' ',options=all_years, default=all_years)
 
 # Static plots in two columns
 col1, col2 = st.beta_columns(2)
@@ -201,7 +198,7 @@ with col2:
 st.header("**What's your favorite Steam game?**")
 
 game_names = steam_info['Game Name'].unique().tolist()
-games_options = st.selectbox('What year you want to explore', game_names)
+games_options = st.sidebar.selectbox('What year you want to explore', game_names)
 selected_game = steam_info[steam_info['Game Name']  == games_options]
 selected_game
 #st.table(games_options)
