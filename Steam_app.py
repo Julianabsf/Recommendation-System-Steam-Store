@@ -109,18 +109,20 @@ with col1:
   pie_plot(platforms_select,'platform')
 
 with col1:
-  st.subheader('What is the common genre?')
+  st.subheader('What are the common genre?')
   genres_select = genres_count[genres_count.year.isin(select_year)].sort_values('count',ascending=False)
   #plot 
   bar_plot(genres_count,'genre','Game Genres','#2a475e')
 
 with col1:
+   st.subheader('What are the common categories?')
    categories_select = categories_count[categories_count.year.isin.select_year].sort_values('count',ascending=False)
    #plot
    bar_plot(categories_select,'category','Game Categories','#2a475e')
 
 
 with col2:
+  st.subheader('Who are the games delopers?')
   developer_count = steam_data[steam_data.release_year.isin(select_year)]
   developer_count = developer_count.developer.value_counts().reset_index()
   developer_count = developer_count.rename(columns={'index':'developer', 'developer':'count'}).sort_values('count'
@@ -129,6 +131,7 @@ with col2:
   bar_plot(developer_count,'developer','Game Developers Companies','#c7d5e0')
 
 with col2:
+    st.subheader('Who are the games publishers?')
     publisher_count = steam_data[steam_data.release_year.isin(select_year)]
     publisher_count = publisher_count.publisher.value_counts().reset_index()
     publisher_count = publisher_count.rename(columns={'index':'publisher','publisher':'count'}).sort_values('count'
@@ -138,6 +141,7 @@ with col2:
     bar_plot(publisher_count,'publisher','Game Publishers Companies','#66c0f4')
  
 with col2:
+    st.subheader('What are the supported languages?')
     languages_select = languages_count[languages_count.year.isin(select_year)].sort_values('count',ascending=False)
     #plot
     bar_plot(languages_select,'languages','Supported Languages','#66c0f4')
