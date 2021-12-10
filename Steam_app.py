@@ -168,7 +168,7 @@ with col2:
 
 with col2:
     st.subheader('What are the games user scores?')
-    games_by_rating = steam_data.loc[steam_data['release_year'] == select_year]
+    games_by_rating = steam_data.loc[steam_data.release_year.isin(select_year)]
     games_by_rating = games_by_rating.sort_values('average_forever', ascending=False)
     sns.distplot(games_by_rating['user_score']);
 
