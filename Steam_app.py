@@ -2,15 +2,24 @@
 
 #import libraries
 
+#basic libraries
 import streamlit as st
 import pandas as pd
 pd.options.mode.chained_assignment = None
 from PIL import Image
 
+#EDA libraries
 import plotly.express as px
 import plotly.graph_objs as go
 import matplotlib as plt
 import seaborn as sns
+
+#Recommendation System libraries
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.neighbors import NearestNeighbors
+from scipy.sparse import csr_matrix
 
 #Remove the warnings
 import warnings
