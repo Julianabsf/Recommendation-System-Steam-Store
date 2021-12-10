@@ -144,7 +144,7 @@ with col2:
     st.subheader('What are the supported languages?')
     languages_select = languages_count[languages_count.year.isin(select_year)].sort_values('count',ascending=False)
     #plot
-    bar_plot(languages_select,'languages','Supported Languages','#66c0f4')
+    bar_plot(languages_select,'language','Supported Languages','#66c0f4')
 
     
 ############################
