@@ -99,7 +99,7 @@ st.header("**Steam Data Overview**")
 
 ####Select multiple years
 all_years = steam_data.release_year.unique().tolist()
-st.sidebar.subheader('*Select the years you want to explore*')
+st.sidebar.subheader('**Select the years you want to explore:**')
 select_year = st.sidebar.multiselect(' ',options=all_years, default=all_years)
 
 # Static plots in two columns
@@ -397,8 +397,9 @@ tfidf = TfidfVectorizer()
 tfidf.fit(steam_recommend['genre'])
 
 st.header("**What're the recommended games?**")
-st.sidebar.header("*Type a name of a Steam game:*")
-game_name = st.sidebar.text_input(" ")
+
+st.sidebar.header("**Type a name of a Steam game:**")
+game_name = st.sidebar.text_input("Type a name of a Steam game:")
 selected_id = steam_recommend.loc[steam_recommend['name']  == game_name].steam_appid.unique()[0]
 
 sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_recommend, 'user_score')
