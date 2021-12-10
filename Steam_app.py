@@ -329,11 +329,11 @@ selected_id = steam_recommend.loc[steam_recommend['name']  == game_name].steam_a
 selected_id = int(selected_id)
 
 
-tfidf = TfidfVectorizer()
+#tfidf = TfidfVectorizer()
 #fitting all the words that we have for all genres using the TF-IDF approach
-tfidf.fit(steam_recommend['genre'])
+#tfidf.fit(steam_recommend['genre'])
 
-sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_recommend, 'user_score')
-recommendations = top_recommend(steam_recommend,selected_id,k=500)
-genre_recommendations = print_description(steam_recommend, recommendations,tfidf)
-st.table(genre_recommendations)
+#sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_recommend, 'user_score')
+#recommendations = top_recommend(steam_recommend,selected_id,k=500)
+#genre_recommendations = print_description(steam_recommend, recommendations,tfidf)
+#st.table(genre_recommendations)
