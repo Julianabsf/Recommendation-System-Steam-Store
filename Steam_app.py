@@ -105,8 +105,8 @@ all_years = steam_data.release_year.unique().tolist()
 st.subheader('**Select the years you want to explore**')
 select_year = st.multiselect(' ',options=all_years, default=all_years)
 year_options = steam_data[steam_data.release_year.isin(select_year)]
-print(type(select_year))
-print(select_year)
+type(select_year)
+select_year
 
 # Static plots in two columns
 col1, col2 = st.beta_columns(2)
