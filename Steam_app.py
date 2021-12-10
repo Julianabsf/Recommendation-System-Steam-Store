@@ -421,8 +421,9 @@ st.table(genre_recommendations)
 - Feature: 'Always make cool stuff'
 - Occupation: 'Data Scientist'
     
-- [**Linkedin**](https://www.linkedin.com/in/ivy-w-81871716b/),
-- [**twitter**](twitter.com/Ivy_DataCracker),
+    
+[Linkedin](https://www.linkedin.com/in/ivy-w-81871716b/)
+[twitter](https://github.com/Julianabsf)
 
 **Thanks for your viewing!**
 """
