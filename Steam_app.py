@@ -178,7 +178,7 @@ with col2:
 with col2:
     st.subheader('How is the price distribuited?')
     games_price = steam_data[steam_data.release_year.isin(select_year)]
-    fig2 =px.histogram(games_price, x="final_eur",
+    fig2 =px.histogram(games_price, x="final_eur",nbins=20,
                        color_discrete_sequence=['#1b2838']).update_layout(showlegend=False,plot_bgcolor="white")
     st.plotly_chart(fig2)
 
@@ -193,9 +193,7 @@ st.header("**What's your favorite Steam game?**")
 
 game_names = steam_info['Game Name'].unique().tolist()
 games_options = st.selectbox('What year you want to explore', game_names)
-
-#game_name = st.text_input("Type the name of your favorite game: ")
-#selected_game = steam_info[steam_info['Game Name']  == game_name]
+selected_game = steam_info[steam_info['Game Name']  == game_name]
 st.table(selected_game)
 
 
