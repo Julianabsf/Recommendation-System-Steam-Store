@@ -113,7 +113,7 @@ col1, col2 = st.beta_columns(2)
 with col1:
   st.subheader('What is the percentage of games for the diffenrent computer systems?')
   #Select platforms based on the select_year:
-  platforms_select = platforms_count.loc[platforms_count['year'] == year_options]
+  platforms_select = platforms_count[platforms_count.year.isin(year_options)]
   ##plot the figure
   fig1 = px.pie(platforms_select, values='count', names = 'platform',
               title='Platforms that Steam games are available',
