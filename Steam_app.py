@@ -104,7 +104,7 @@ steam_data = steam_data.sort_values('release_year',ascending=True)
 all_years = steam_data.release_year.unique().tolist()
 st.subheader('**Select the years you want to explore**')
 select_year = st.multiselect(' ',options=all_years, default=all_years)
-year_options = steam_data[steam_data.release_year.isin(select_years)]
+year_options = steam_data[steam_data.release_year.isin(select_year)]
 
 
 # Static plots in two columns
@@ -113,7 +113,7 @@ col1, col2 = st.beta_columns(2)
 with col1:
   st.subheader('What is the percentage of games for the diffenrent computer systems?')
   #Select platforms based on the select_year:
-  platforms_select = platforms_count.loc[platforms_count['year'] == select_year]
+  platforms_select = platforms_count.loc[platforms_count['year'] == year_options]
   ##plot the figure
   fig1 = px.pie(platforms_select, values='count', names = 'platform',
               title='Platforms that Steam games are available',
