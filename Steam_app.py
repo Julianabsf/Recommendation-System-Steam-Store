@@ -266,5 +266,5 @@ st.header("**Recommendation System**")
 #game_id = st.text_input("Type the game id: ")
 #selected_id = steam_recommend[steam_recommend['steam_appid']  == game_id]
 
-sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_df, 'user_score')
-top_recommend(steam_df,255710,k=500)
+sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_recommend, 'user_score')
+top_recommend(steam_recommend,255710,k=500)
