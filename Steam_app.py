@@ -108,15 +108,14 @@ select_year = st.multiselect(' ',options=all_years, default=all_years)
 # Static plots in two columns
 col1, col2 = st.beta_columns(2)
 
-color_pallet = ['#1b2838','#c7d5e0','#2a475e','#66c0f4']
-
 with col1:
   st.subheader('What is the percentage of games for the diffenrent computer systems?')
   #Select platforms based on the select_year:
   platforms_select = platforms_count[platforms_count.year.isin(select_year)]
   ##plot the figure
   pie_plot(platforms_select,'platform')
-  
+
+with col1:
   st.subheader('What is the common genre?')
   genres_select = genres_count[genres_count.year.isin(select_year)]
   bar_plot(developer_count,'genre','Game Genres','#2a475e')
