@@ -418,7 +418,7 @@ st.table(genre_recommendations)
     st.sidebar.subheader("About Author")
     text = """\
     - Name: 'Ivy Wang'
-        - Feature: 'Always make cool stuff'
+- Feature: 'Always make cool stuff'
             - Occupation: 'Data Scientist'
     
                 - [**Linkedin**](https://www.linkedin.com/in/ivy-w-81871716b/),
