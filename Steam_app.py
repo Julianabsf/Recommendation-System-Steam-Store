@@ -104,9 +104,6 @@ steam_data = steam_data.sort_values('release_year',ascending=True)
 all_years = steam_data.release_year.unique().tolist()
 st.subheader('**Select the years you want to explore**')
 select_year = st.multiselect(' ',options=all_years, default=all_years)
-#year_options = steam_data[steam_data.release_year.isin(select_year)]
-#year_options
-
 
 # Static plots in two columns
 col1, col2 = st.beta_columns(2)
@@ -114,21 +111,19 @@ col1, col2 = st.beta_columns(2)
 with col1:
   st.subheader('What is the percentage of games for the diffenrent computer systems?')
   #Select platforms based on the select_year:
-  #platforms_select = platforms_select = platforms_count.loc[platforms_count['year'] == select_year]
   platforms_select = platforms_count[platforms_count.year.isin(select_year)]
-  platforms_select
 
   ##plot the figure
   pie_plot(platforms_select,'platform')
   
 
 #with col2:
-  #developer_count = steam_data.loc[steam_data['release_year'] == select_year]
-  #developer_count = developer_count.developer.value_counts().reset_index()
-  #developer_count = developer_count.rename(columns={'index':'developer', 'developer':'count'}).sort_values('count'
-                                                                                                           #,ascending=False).head(15)
+  developer_count = steam_data[steam_data.release_year.isin(select_year)]
+  developer_count = developer_count.developer.value_counts().reset_index()
+  developer_count = developer_count.rename(columns={'index':'developer', 'developer':'count'}).sort_values('count'
+                                                                                                           ,ascending=False).head(15)
   #plot
-  #bar_plot(developer_count,'developer','Game Developers Companies','#c7d5e0')
+  bar_plot(developer_count,'developer','Game Developers Companies','#c7d5e0')
  
     
     
