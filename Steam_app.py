@@ -418,3 +418,4 @@ st.sidebar.header("**About the Author**")
 Name: Juliana Figueira
 Ocupation: Junior Data Scientist
 """
+st.sidebar.markdown(text)
