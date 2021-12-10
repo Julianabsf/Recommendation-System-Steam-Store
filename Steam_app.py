@@ -338,5 +338,5 @@ if selected_id != 0:
         genre_recommendations = print_description(steam_recommend, recommendations,tfidf)
         st.table(genre_recommendations)
     except:
-        break
+    break
         
