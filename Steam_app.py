@@ -334,6 +334,6 @@ tfidf = TfidfVectorizer()
 tfidf.fit(steam_recommend['genre'])
 
 sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_recommend, 'user_score')
-recommendations = top_recommend(steam_recommend,10,k=500)
+recommendations = top_recommend(steam_recommend,selected_id,k=500)
 genre_recommendations = print_description(steam_recommend, recommendations,tfidf)
 st.table(genre_recommendations)
