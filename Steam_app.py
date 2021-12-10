@@ -105,8 +105,9 @@ all_years = steam_data.release_year.unique().tolist()
 st.subheader('**Select the years you want to explore**')
 select_year = st.multiselect(' ',options=all_years, default=all_years)
 year_options = steam_data[steam_data.release_year.isin(select_year)]
-type(select_year)
 select_year
+type(select_year)
+
 
 # Static plots in two columns
 col1, col2 = st.beta_columns(2)
@@ -116,6 +117,7 @@ with col1:
   #Select platforms based on the select_year:
   #platforms_select = platforms_select = platforms_count.loc[platforms_count['year'] == select_year]
   platforms_select = platforms_count[platforms_count.year.isin(year_options)]
+  platforms_select
 
   ##plot the figure
   #pie_plot(platforms_select,'platform')
