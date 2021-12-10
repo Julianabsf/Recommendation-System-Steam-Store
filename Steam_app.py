@@ -133,7 +133,7 @@ with col2:
 with col2:
     publisher_count = steam_data[steam_data.release_year.isin(select_year)]
     publisher_count = publisher_count.publisher.value_counts().reset_index()
-    publisher_count = publisher_count.rename(columns={'index':'developer','publisher':'count'}).sort_values('count'
+    publisher_count = publisher_count.rename(columns={'index':'publisher','publisher':'count'}).sort_values('count'
                                                                                                             ,ascending=False).head(15)
  
     #plot
