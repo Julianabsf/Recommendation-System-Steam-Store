@@ -395,7 +395,7 @@ tfidf.fit(steam_recommend['genre'])
 
 st.header("**Recommendation System**")
 game_name = st.text_input("Type the game name: ")
-selected_id = steam_recommend.loc[steam_recommend['name']  == game_name].steam_appid.unique()
+selected_id = steam_recommend.loc[steam_recommend['name']  == game_name].steam_appid.unique()[0]
 
 sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_recommend, 'user_score')
 recommendations = top_recommend(steam_recommend,selected_id,k=500)
