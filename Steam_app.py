@@ -7,6 +7,7 @@ import streamlit as st
 import pandas as pd
 pd.options.mode.chained_assignment = None
 from PIL import Image
+import numpy as np
 
 #EDA libraries
 import plotly.express as px
