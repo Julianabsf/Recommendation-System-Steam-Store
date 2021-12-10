@@ -98,8 +98,6 @@ steam_data = steam_data.sort_values('release_year',ascending=True)
 
 #select one year
 all_years = steam_data.release_year.unique().tolist()
-total_years = steam_data
-all_years = all_years.append(total_years)
 st.subheader('**Select the years you want to explore**')
 year_options = st.selectbox('What year you want to explore', all_years)
 select_year = int(year_options)
