@@ -99,7 +99,7 @@ st.header("**Steam Data Overview**")
 
 ####Select multiple years
 all_years = steam_data.release_year.unique().tolist()
-st.subheader('**Select the years you want to explore**')
+st.sidebar.subheader('*Select the years you want to explore*')
 select_year = st.sidebar.multiselect(' ',options=all_years, default=all_years)
 
 # Static plots in two columns
@@ -190,13 +190,11 @@ with col2:
 ############################
 # Second Block
 ############################
+st.header("**What's your favorite Steam game?**")
 
-####select one year
-
-st.sidebar.header("**What's your favorite Steam game?**")
-
+st.sidebar.header("**Type the name of your favorite Steam Game?**")
 game_names = steam_info['Game Name'].unique().tolist()
-games_options = st.sidebar.selectbox('What year you want to explore', game_names)
+games_options = st.sidebar.selectbox('', game_names)
 selected_game = steam_info[steam_info['Game Name']  == games_options]
 selected_game
 #st.table(games_options)
@@ -393,12 +391,14 @@ def print_description(df, df_recommend,tfidf):
     return five_descriptiton
 
 #####################################################
+
 tfidf = TfidfVectorizer()
 #fitting all the words that we have for all genres using the TF-IDF approach
 tfidf.fit(steam_recommend['genre'])
 
-st.header("**Recommendation System**")
-game_name = st.sidebar.text_input("Type the game name: ")
+st.header("**What're the recommended games?**")
+st.sidebar.header("*Type a name of a Steam game:*")
+game_name = st.sidebar.text_input(" ")
 selected_id = steam_recommend.loc[steam_recommend['name']  == game_name].steam_appid.unique()[0]
 
 sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_recommend, 'user_score')
