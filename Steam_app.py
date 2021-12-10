@@ -322,20 +322,19 @@ def print_description(df, df_recommend,tfidf):
     return five_descriptiton
 
 #####################################################
-
-st.header("**Recommendation System**")
-game_name = st.text_input("Type the game name: ")
-selected_id = steam_recommend.loc[steam_recommend['name']  == game_name].steam_appid.unique()[0]
-
 tfidf = TfidfVectorizer()
 #fitting all the words that we have for all genres using the TF-IDF approach
 tfidf.fit(steam_recommend['genre'])
 
 
-for selected_id in len(steam_recommend):
-    if selected_id == ' ':
+st.header("**Recommendation System**")
+game_name = st.text_input("Type the game name: ")
+selected_id = steam_recommend.loc[steam_recommend['name']  == game_name].steam_appid.unique()[0]
+
+if selected_id != 0:
+    try:
         break
-    else:
+    except:
         sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_recommend, 'user_score')
         recommendations = top_recommend(steam_recommend,selected_id,k=500)
         genre_recommendations = print_description(steam_recommend, recommendations,tfidf)
