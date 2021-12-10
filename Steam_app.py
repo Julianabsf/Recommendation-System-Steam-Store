@@ -30,6 +30,7 @@ warnings.filterwarnings('ignore')
 # Plots Functions
 #############################
 
+#Bar Plot
 def bar_plot(df,column_name,xaxis_name,color):
     fig = px.bar(df, y='count', x= column_name,
                     color_discrete_sequence = [color],
@@ -37,7 +38,8 @@ def bar_plot(df,column_name,xaxis_name,color):
                             'count': 'Total Games'}).update_layout(showlegend=False,
                                                                           plot_bgcolor="white")
     st.plotly_chart(fig)
- 
+
+#Pie Plot
 def pie_plot(df,column_name):
     fig = px.pie(df, values='count', names = column_name,
                       color_discrete_sequence = color_pallet).update_traces(textinfo='percent', 
@@ -65,25 +67,27 @@ On this page, you can see the results of the exploratory data analysis (EDA) and
 # Load the datasets
 ############################
 
-# Principal dataset:
+#Principal dataset:
 steam_data = pd.read_csv("Datasets/steam_df_clean.csv")
-# Genreal infomation dataset:
+#Genreal infomation dataset:
 steam_info = pd.read_csv('Datasets/steam_general.csv',index_col=0)
-# Split platforms dataset:
+#Split platforms dataset:
 platforms_count = pd.read_csv('Datasets/platforms_count.csv')
-# Split genre dataset:
+#Split genre dataset:
 genres_count = pd.read_csv('Datasets/genres_count.csv')
-# Split categories dataset:
+#Split categories dataset:
 categories_count = pd.read_csv('Datasets/categories_count.csv')
-# Split languages dataset:
+#Split languages dataset:
 languages_count = pd.read_csv('Datasets/languages_count.csv')
+#Model dataset:
+steam_recommend = pd.read_csv('Datasets/steam_recommend')
 
 
 #steam color pallet
 color_pallet = ['#1b2838','#c7d5e0','#2a475e','#66c0f4']
 
 ############################
-# First Block
+# First Block - EDA
 ############################
 
 st.header("**Steam Data Overview**")
@@ -126,3 +130,14 @@ st.header("**What's your favorite Steam game?**")
 game_name = st.text_input("Type the name of your favorite game: ")
 selected_game = steam_info[steam_info['Game Name']  == game_name]
 st.table(selected_game)
+
+############################
+# Third Block - Recommendation System
+############################
+
+### Model Functions
+
+st.header("**Recommendation System**")
+game_id = st.text_input("Type the game id: ")
+selected_id = steam_info[steam_info['Game Name']  == game_name]
+
