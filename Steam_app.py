@@ -115,7 +115,7 @@ with col1:
   st.subheader('What is the percentage of games for the diffenrent computer systems?')
   #Select platforms based on the select_year:
   #platforms_select = platforms_select = platforms_count.loc[platforms_count['year'] == select_year]
-  platforms_select = platforms_count[platforms_count.year.isin(year_options)]
+  platforms_select = platforms_count[platforms_count.year.isin(select_year)]
   platforms_select
 
   ##plot the figure
