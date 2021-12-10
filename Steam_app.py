@@ -329,7 +329,7 @@ st.header("**Recommendation System**")
 
 tfidf = TfidfVectorizer()
 #fitting all the words that we have for all genres using the TF-IDF approach
-tfidf.fit(steam_df['genre'])
+tfidf.fit(steam_recommend['genre'])
 
 sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_recommend, 'user_score')
 cities_recommend = top_recommend(steam_recommend,255710,k=500)
