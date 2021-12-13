@@ -405,14 +405,9 @@ tfidf.fit(steam_recommend['genre'])
 
 st.header("**What're the recommended games?**")
 
-#st.sidebar.header("**Type a name of a Steam game:**")
-#game_name = st.sidebar.text_input("Type a name of a Steam game:")
-
+st.subheader("**For each game you want a recommendation?**")
 games_list = steam_recommend['name'].unique().tolist()
 game_name = st.selectbox('', games_list)
-#selected_game = steam_info[steam_info['Game Name']  == games_options]
-#selected_game
-st.header("**For each game you want a recommendation?**")
 selected_id = steam_recommend.loc[steam_recommend['name']  == game_name].steam_appid.unique()[0]
 
 sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_recommend, 'user_score')
