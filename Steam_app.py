@@ -99,8 +99,10 @@ st.header("**Steam Data Overview**")
 
 ####Select multiple years
 all_years = steam_data.release_year.unique().tolist()
-st.sidebar.subheader('**Select the years you want to explore:**')
-select_year = st.sidebar.multiselect(' ',options=all_years, default=all_years)
+#st.sidebar.subheader('**Select the years you want to explore:**')
+#select_year = st.sidebar.multiselect(' ',options=all_years, default=all_years)
+st.subheader('**Select the years you want to explore:**')
+select_year = st.multiselect(' ',options=all_years, default=all_years)
 
 # Static plots in two columns
 col1, col2 = st.beta_columns(2)
@@ -151,14 +153,8 @@ with col1:
    categories_select = categories_count[categories_count.year.isin(select_year)].sort_values('count',ascending=False)
    #plot
    bar_plot(categories_select,'category','Game Categories','#2a475e')
-    
-with col2:
-  st.subheader('What are the common genre?')
-  genres_select = genres_count[genres_count.year.isin(select_year)].sort_values('count',ascending=False)
-  #plot 
-  bar_plot(genres_count,'genre','Game Genres','#2a475e')
 
-with col1:
+    with col2:
     st.subheader('What are the games with the biggest average playtime?')
     game_playtime = steam_data[steam_data.release_year.isin(select_year)]
     game_playtime = game_playtime.sort_values('average_forever', ascending=False).head(10)
@@ -167,7 +163,13 @@ with col1:
                       color_discrete_sequence = ['#c7d5e0'],
                      labels={'average_forever': 'Average playtime in minutes', 'name': 'Game Name'},
                      title = 'Games with the biggest playtime in Steam').update_layout(showlegend=False, plot_bgcolor="white")
-    st.plotly_chart(fig_playtime)
+    st.plotly_chart(fig_playtime)    
+
+with col1:
+  st.subheader('What are the common genre?')
+  genres_select = genres_count[genres_count.year.isin(select_year)].sort_values('count',ascending=False)
+  #plot 
+  bar_plot(genres_count,'genre','Game Genres','#2a475e')
 
 with col2:
   st.subheader('Who are the games delopers?')
@@ -194,9 +196,11 @@ with col1:
 ############################
 st.header("**What's your favorite Steam game?**")
 
-st.sidebar.header("**Type the name of your favorite Steam Game?**")
+st.header("**Type the name of your favorite Steam Game?**")
+#st.sidebar.header("**Type the name of your favorite Steam Game?**")
 game_names = steam_info['Game Name'].unique().tolist()
-games_options = st.sidebar.selectbox('', game_names)
+games_options = st.selectbox('', game_names)
+#games_options = st.sidebar.selectbox('', game_names)
 selected_game = steam_info[steam_info['Game Name']  == games_options]
 selected_game
 #st.table(games_options)
@@ -400,8 +404,10 @@ tfidf.fit(steam_recommend['genre'])
 
 st.header("**What're the recommended games?**")
 
-st.sidebar.header("**Type a name of a Steam game:**")
-game_name = st.sidebar.text_input("Type a name of a Steam game:")
+#st.sidebar.header("**Type a name of a Steam game:**")
+#game_name = st.sidebar.text_input("Type a name of a Steam game:")
+st.header("**Type a name of a Steam game:**")
+game_name = st.text_input("Type a name of a Steam game:")
 selected_id = steam_recommend.loc[steam_recommend['name']  == game_name].steam_appid.unique()[0]
 
 sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_recommend, 'user_score')
