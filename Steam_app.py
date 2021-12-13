@@ -42,7 +42,7 @@ def bar_plot(df,column_name,xaxis_name,color):
                     labels={column_name: xaxis_name, 
                             'count': 'Total Games'}).update_layout(showlegend=False,
                                                                           plot_bgcolor="white")
-    st.plotly_chart(fig,height=800)
+    st.plotly_chart(fig,height=800,width=600)
 
 #Pie Plot
 def pie_plot(df,column_name):
@@ -53,7 +53,7 @@ def pie_plot(df,column_name):
                                                                             marker=dict(colors=color_pallet, 
                                                                                         line=dict(color='#000000',
                                                                                                   width=1)))
-    st.plotly_chart(fig,height=800)
+    st.plotly_chart(fig,height=800,width=600)
 
 #############################
 # Introduction
@@ -112,17 +112,51 @@ with col1:
   ##plot the figure
   pie_plot(platforms_select,'platform')
 
+with col2:
+    st.subheader('What are the games user scores?')
+    games_by_rating = steam_data.loc[steam_data.release_year.isin(select_year)]
+    games_by_rating = games_by_rating.sort_values('user_score', ascending=False)
+    #Histogram
+    fig1 = px.histogram(games_by_rating, x="user_score",nbins=30,
+                        color_discrete_sequence=['#c7d5e0']).update_layout(showlegend=False,plot_bgcolor="white")
+    st.plotly_chart(fig1)
+ 
 with col1:
-  st.subheader('What are the common genre?')
-  genres_select = genres_count[genres_count.year.isin(select_year)].sort_values('count',ascending=False)
-  #plot 
-  bar_plot(genres_count,'genre','Game Genres','#2a475e')
+    st.subheader('Free and Non-Free Games?')
+    free_games = steam_data[steam_data.release_year.isin(select_year)]
+    free_games = free_games.is_free.value_counts().reset_index()
+    free_games = free_games.rename(columns={'index':'free', 'is_free':'count'}).replace({False: 'Pay Games',
+                                                                                         True: ' Free Games'})
+    #plot
+    pie_plot(free_games,'free')
 
+with col2:
+    st.subheader('How is the price distribuited?')
+    games_price = steam_data[steam_data.release_year.isin(select_year)]
+    fig2 = px.scatter(steam_data, x="final_eur", y='user_score', size='user_score',hover_data=['name'],
+                           color_continuous_scale= '#66c0f4',
+                           labels={'user_score': 'Game Rating', 
+                                   'final_eur': 'Game Price'},
+                           title = 'Steam games by Rating and Price')
+    st.plotly_chart(fig2)
+    
+with col2:
+    st.subheader('What are the supported languages?')
+    languages_select = languages_count[languages_count.year.isin(select_year)].sort_values('count',ascending=False)
+    #plot
+    bar_plot(languages_select,'language','Supported Languages','#66c0f4')
+    
 with col1:
    st.subheader('What are the common categories?')
    categories_select = categories_count[categories_count.year.isin(select_year)].sort_values('count',ascending=False)
    #plot
    bar_plot(categories_select,'category','Game Categories','#2a475e')
+    
+with col2:
+  st.subheader('What are the common genre?')
+  genres_select = genres_count[genres_count.year.isin(select_year)].sort_values('count',ascending=False)
+  #plot 
+  bar_plot(genres_count,'genre','Game Genres','#2a475e')
 
 with col1:
     st.subheader('What are the games with the biggest average playtime?')
@@ -135,16 +169,6 @@ with col1:
                      title = 'Games with the biggest playtime in Steam').update_layout(showlegend=False, plot_bgcolor="white")
     st.plotly_chart(fig_playtime)
 
-with col1:
-    st.subheader('Free and Non-Free Games?')
-    free_games = steam_data[steam_data.release_year.isin(select_year)]
-    free_games = free_games.is_free.value_counts().reset_index()
-    free_games = free_games.rename(columns={'index':'free', 'is_free':'count'}).replace({False: 'Pay Games',
-                                                                                         True: ' Free Games'})
-    #plot
-    pie_plot(free_games,'free')
-    
-
 with col2:
   st.subheader('Who are the games delopers?')
   developer_count = steam_data[steam_data.release_year.isin(select_year)]
@@ -154,7 +178,7 @@ with col2:
   #plot
   bar_plot(developer_count,'developer','Game Developers Companies','#c7d5e0')
 
-with col2:
+with col1:
     st.subheader('Who are the games publishers?')
     publisher_count = steam_data[steam_data.release_year.isin(select_year)]
     publisher_count = publisher_count.publisher.value_counts().reset_index()
@@ -164,29 +188,7 @@ with col2:
     #plot
     bar_plot(publisher_count,'publisher','Game Publishers Companies','#66c0f4')
  
-with col2:
-    st.subheader('What are the supported languages?')
-    languages_select = languages_count[languages_count.year.isin(select_year)].sort_values('count',ascending=False)
-    #plot
-    bar_plot(languages_select,'language','Supported Languages','#66c0f4')
 
-with col2:
-    st.subheader('What are the games user scores?')
-    games_by_rating = steam_data.loc[steam_data.release_year.isin(select_year)]
-    games_by_rating = games_by_rating.sort_values('user_score', ascending=False)
-    #Histogram
-    fig1 = px.histogram(games_by_rating, x="user_score",nbins=30,
-                        color_discrete_sequence=['#1b2838']).update_layout(showlegend=False,plot_bgcolor="white")
-    st.plotly_chart(fig1)
-
-with col2:
-    st.subheader('How is the price distribuited?')
-    games_price = steam_data[steam_data.release_year.isin(select_year)]
-    fig2 =px.histogram(games_price, x="final_eur",
-                       color_discrete_sequence=['#1b2838']).update_layout(showlegend=False,plot_bgcolor="white")
-    st.plotly_chart(fig2)
-
-    
 ############################
 # Second Block
 ############################
