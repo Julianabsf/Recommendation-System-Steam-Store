@@ -42,7 +42,7 @@ def bar_plot(df,column_name,xaxis_name,color):
                     labels={column_name: xaxis_name, 
                             'count': 'Total Games'}).update_layout(showlegend=False,
                                                                           plot_bgcolor="white")
-    st.plotly_chart(fig)
+    st.plotly_chart(fig,height=800)
 
 #Pie Plot
 def pie_plot(df,column_name):
@@ -53,7 +53,7 @@ def pie_plot(df,column_name):
                                                                             marker=dict(colors=color_pallet, 
                                                                                         line=dict(color='#000000',
                                                                                                   width=1)))
-    st.plotly_chart(fig)
+    st.plotly_chart(fig,height=800)
 
 #############################
 # Introduction
