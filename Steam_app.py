@@ -30,7 +30,7 @@ warnings.filterwarnings('ignore')
 
 
 #########################
-
+[theme]
 primaryColor="#1b2838"
 backgroundColor="#FFFFFF"
 secondaryBackgroundColor="#1b2838"
