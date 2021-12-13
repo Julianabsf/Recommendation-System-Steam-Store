@@ -33,8 +33,8 @@ warnings.filterwarnings('ignore')
 
 primaryColor="#1b2838"
 backgroundColor="#FFFFFF"
-secondaryBackgroundColor="#F0F2F6"
-textColor="#262730"
+secondaryBackgroundColor="#1b2838"
+textColor="#1b2838"
 font="sans serif"
 
 #############################
