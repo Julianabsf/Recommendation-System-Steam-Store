@@ -419,6 +419,3 @@ st.table(genre_recommendations)
 ###########################
 # About the Author
 ###########################
-
-st.sidebar.header("**About the Author**")
-
