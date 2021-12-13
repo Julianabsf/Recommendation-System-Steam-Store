@@ -407,8 +407,8 @@ st.header("**What're the recommended games?**")
 
 #st.sidebar.header("**Type a name of a Steam game:**")
 #game_name = st.sidebar.text_input("Type a name of a Steam game:")
-st.header("**Type a name of a Steam game:**")
-game_name = st.text_input("Type a name of a Steam game:")
+st.header("**For each game you want a recommendation?**")
+game_name =  st.selectbox('', game_names)
 selected_id = steam_recommend.loc[steam_recommend['name']  == game_name].steam_appid.unique()[0]
 
 sparse_matrix, user_mapper, game_mapper,user_inv_mapper, game_inv_mapper = create_sparse_matrix(steam_recommend, 'user_score')
