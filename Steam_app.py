@@ -153,8 +153,8 @@ with col1:
    categories_select = categories_count[categories_count.year.isin(select_year)].sort_values('count',ascending=False)
    #plot
    bar_plot(categories_select,'category','Game Categories','#2a475e')
-
-    with col2:
+    
+with col2:
     st.subheader('What are the games with the biggest average playtime?')
     game_playtime = steam_data[steam_data.release_year.isin(select_year)]
     game_playtime = game_playtime.sort_values('average_forever', ascending=False).head(10)
