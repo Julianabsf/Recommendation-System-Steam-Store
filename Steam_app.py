@@ -221,14 +221,14 @@ Then you can get the top five games recommendations. But remember that you can f
 """
 
 st.header("**Type the name of your favorite Steam Game?**")
-#st.sidebar.header("**Type the name of your favorite Steam Game?**")
+
+steam_info = steam_info.sort_values('Game Name', ascending=False)
 game_names = steam_info['Game Name'].unique().tolist()
 games_options = st.selectbox('', game_names)
 #games_options = st.sidebar.selectbox('', game_names)
 selected_game = steam_info[steam_info['Game Name']  == games_options]
 selected_game
 #st.table(games_options)
-
 
 
 ############################
@@ -436,6 +436,9 @@ tfidf.fit(steam_recommend['genre'])
 st.header("**What're the recommended games?**")
 
 st.subheader("**For each game you want a recommendation?**")
+
+steam_recommend = steam_recommend.sort_values('name', ascending=False)
+
 games_list = steam_recommend['name'].unique().tolist()
 game_name = st.selectbox('', games_list)
 selected_id = steam_recommend.loc[steam_recommend['name']  == game_name].steam_appid.unique()[0]
