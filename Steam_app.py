@@ -222,13 +222,14 @@ Then you can get the top five games recommendations. But remember that you can f
 
 st.header("**Type the name of your favorite Steam Game?**")
 
-steam_info = steam_info.sort_values('Game Name', ascending=True)
+steam_info = steam_info(index=False).sort_values('Game Name', ascending=True)
+
 game_names = steam_info['Game Name'].unique().tolist()
 games_options = st.selectbox('', game_names)
 #games_options = st.sidebar.selectbox('', game_names)
 selected_game = steam_info[steam_info['Game Name']  == games_options]
 #selected_game
-st.table(selected_game, index=False)
+st.table(selected_game)
 
 
 ############################
