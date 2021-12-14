@@ -55,6 +55,13 @@ def pie_plot(df,column_name):
                                                                                                   width=1)))
     st.plotly_chart(fig,height=800,width=600)
 
+##############################
+# Image
+##############################
+
+image = Image.open('games_image.jpg')
+st.image(image, caption='Sunrise by the mountains')
+
 #############################
 # Introduction
 #############################
