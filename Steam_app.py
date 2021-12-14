@@ -149,7 +149,7 @@ with col1:
 with col2:
     st.subheader('How is the price distributed?')
     games_price = steam_data[steam_data.release_year.isin(select_year)]
-    fig2 = px.scatter(steam_data, x="final_eur", y='user_score', size='user_score',hover_data=['name'],
+    fig2 = px.scatter(games_price, x="final_eur", y='user_score', size='user_score',hover_data=['name'],
                            color_discrete_sequence= ['#66c0f4'],
                            labels={'user_score': 'Game Rating', 
                                    'final_eur': 'Game Price'},
