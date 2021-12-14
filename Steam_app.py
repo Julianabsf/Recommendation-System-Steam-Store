@@ -114,12 +114,10 @@ You can see it for all the years of the dataset, or you can filter for the years
 ####Select multiple years
 steam_data = steam_data.sort_values('release_year', ascending=False)
 
-
-
 all_years = steam_data.release_year.unique().tolist()
 st.subheader('**Select the years you want to explore:**')
-select_year = st.slider( 'Select a range of values',1998, 2021)
-st.write('Values:', values[0])
+select_year = st.slider( 'Select a range of years',1998, 2021,(1998,2021))
+st.write('Select years:', select_year[0])
 
 #select_year = st.multiselect(' ',options=all_years, default=all_years)
 
