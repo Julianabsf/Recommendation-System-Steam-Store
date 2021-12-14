@@ -30,8 +30,10 @@ warnings.filterwarnings('ignore')
 
 
 #########################
-st.set_page_config(page_title="Steam Analysis Dashboard ", 
-                   layout='wide')
+#Page Configuration
+########################
+
+st.set_page_config(page_title="Steam Analysis Dashboard ", layout='wide')
 
 #############################
 # Plots Functions
@@ -62,7 +64,7 @@ def pie_plot(df,column_name):
 ##############################
 
 image = Image.open('games_image.jpg')
-st.image(image, caption='Sunrise by the mountains')
+st.image(image, caption='Image by Branden Skeli')
 
 #############################
 # Introduction
@@ -102,6 +104,12 @@ color_pallet = ['#1b2838','#c7d5e0','#2a475e','#66c0f4']
 ############################
 
 st.header("**Steam Data Overview**")
+"""
+The first part is the exploratory data analysis (EDA). In this part, you can find some 
+information about Steam, such as the game's price, the publishers, etc. 
+You can see it for all the years of the dataset, or you can filter for the years you want.
+
+"""
 
 ####Select multiple years
 all_years = steam_data.release_year.unique().tolist()
@@ -114,14 +122,14 @@ select_year = st.multiselect(' ',options=all_years, default=all_years)
 col1, col2 = st.beta_columns(2)
 
 with col1:
-  st.subheader('What is the percentage of games for the diffenrent computer systems?')
+  st.subheader('What is the percentage of games for the different computer systems?')
   #Select platforms based on the select_year:
   platforms_select = platforms_count[platforms_count.year.isin(select_year)]
   ##plot the figure
   pie_plot(platforms_select,'platform')
 
 with col2:
-    st.subheader('What are the games user scores?')
+    st.subheader("What are the game's user scores?")
     games_by_rating = steam_data.loc[steam_data.release_year.isin(select_year)]
     games_by_rating = games_by_rating.sort_values('user_score', ascending=False)
     #Histogram
@@ -130,7 +138,7 @@ with col2:
     st.plotly_chart(fig1)
  
 with col1:
-    st.subheader('Free and Non-Free Games?')
+    st.subheader('Are there free games on Steam?')
     free_games = steam_data[steam_data.release_year.isin(select_year)]
     free_games = free_games.is_free.value_counts().reset_index()
     free_games = free_games.rename(columns={'index':'free', 'is_free':'count'}).replace({False: 'Pay Games',
@@ -139,7 +147,7 @@ with col1:
     pie_plot(free_games,'free')
 
 with col2:
-    st.subheader('How is the price distribuited?')
+    st.subheader('How is the price distributed?')
     games_price = steam_data[steam_data.release_year.isin(select_year)]
     fig2 = px.scatter(steam_data, x="final_eur", y='user_score', size='user_score',hover_data=['name'],
                            color_discrete_sequence= ['#66c0f4'],
@@ -155,7 +163,7 @@ with col2:
     bar_plot(languages_select,'language','Supported Languages','#66c0f4')
     
 with col1:
-   st.subheader('What are the common categories?')
+   st.subheader('What are the most common categories?')
    categories_select = categories_count[categories_count.year.isin(select_year)]
    categories_select = categories_select.sort_values('count',ascending=False)
    #plot
@@ -173,13 +181,13 @@ with col2:
     st.plotly_chart(fig_playtime)    
 
 with col1:
-  st.subheader('What are the common genre?')
+  st.subheader('What are the most common genres?')
   genres_select = genres_count[genres_count.year.isin(select_year)].sort_values('count',ascending=False)
   #plot 
   bar_plot(genres_count,'genre','Game Genres','#2a475e')
 
 with col2:
-  st.subheader('Who are the games delopers?')
+  st.subheader("Who are the game's developers?")
   developer_count = steam_data[steam_data.release_year.isin(select_year)]
   developer_count = developer_count.developer.value_counts().reset_index()
   developer_count = developer_count.rename(columns={'index':'developer', 'developer':'count'}).sort_values('count'
