@@ -400,7 +400,7 @@ def print_description(df, df_recommend,tfidf):
                                                                                 'genre':'Genre', 
                                                                                 'final_eur':'Price', 
                                                                                 'user_score':'Game Rating',
-                                                                                'short_description':'Game Description'}
+                                                                                'short_description':'Game Description'})
     
     return five_recommend
 
