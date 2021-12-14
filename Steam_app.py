@@ -31,9 +31,6 @@ warnings.filterwarnings('ignore')
 
 #########################
 
-title_image = Image.open("games_image.jpg")
-st.image(title_image)
-
 #############################
 # Plots Functions
 #############################
