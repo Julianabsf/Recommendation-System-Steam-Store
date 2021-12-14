@@ -160,31 +160,26 @@ with col2:
     st.subheader('What are the supported languages?')
     languages_select = languages_count[languages_count.year.isin(select_year)].sort_values('count',ascending=False)
     #plot
-    bar_plot(languages_select,'language','Supported Languages','#66c0f4')
+    bar_plot(languages_select,'language','Supported Languages','#2a475e')
     
 with col1:
    st.subheader('What are the most common categories?')
-   categories_select = categories_count[categories_count.year.isin(select_year)]
-   categories_select = categories_select.sort_values('count',ascending=False)
+   categories_select = categories_count[categories_count.year.isin(select_year)].sort_values('count',ascending=False)
    #plot
-   bar_plot(categories_select,'category','Games Categories','#2a475e')
+   bar_plot(categories_select,'category','Games Categories','#171a21')
     
 with col2:
-    st.subheader('What are the games with the biggest average playtime?')
+    st.subheader('What are the games with the greatest average playtime?')
     game_playtime = steam_data[steam_data.release_year.isin(select_year)]
     game_playtime = game_playtime.sort_values('average_forever', ascending=False).head(10)
     #plot
-    fig_playtime = px.bar(game_playtime, x='name',y='average_forever',
-                      color_discrete_sequence = ['#c7d5e0'],
-                     labels={'average_forever': 'Average playtime in minutes', 'name': 'Game Name'},
-                     title = 'Games with the biggest playtime in Steam').update_layout(showlegend=False, plot_bgcolor="white")
-    st.plotly_chart(fig_playtime)    
+    bar_plot(game_playtime,'average_forever','Average Playtime','#1b2838')
 
 with col1:
   st.subheader('What are the most common genres?')
   genres_select = genres_count[genres_count.year.isin(select_year)].sort_values('count',ascending=False)
   #plot 
-  bar_plot(genres_select,'genre','Games Genres','#2a475e')
+  bar_plot(genres_select,'genre','Games Genres','#66c0f4')
 
 with col2:
   st.subheader("Who are the game's developers?")
@@ -193,7 +188,7 @@ with col2:
   developer_count = developer_count.rename(columns={'index':'developer', 'developer':'count'}).sort_values('count'
                                                                                                            ,ascending=False).head(15)
   #plot
-  bar_plot(developer_count,'developer','Games Developers Companies','#c7d5e0')
+  bar_plot(developer_count,'developer','Games Developers Companies','#171a21')
 
 with col1:
     st.subheader('Who are the games publishers?')
@@ -203,7 +198,7 @@ with col1:
                                                                                                             ,ascending=False).head(15)
  
     #plot
-    bar_plot(publisher_count,'publisher','Games Publishers Companies','#66c0f4')
+    bar_plot(publisher_count,'publisher','Games Publishers Companies','#c7d5e0')
  
 
 ############################
