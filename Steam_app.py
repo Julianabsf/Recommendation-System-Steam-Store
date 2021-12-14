@@ -394,11 +394,18 @@ def print_description(df, df_recommend,tfidf):
     """
     
     five_games = get_similarity_genre(df_recommend, tfidf).reset_index()
-    five_descriptiton = df[df.name.isin(five_games.name)].reset_index()
+    five_recommend = df[df.name.isin(five_games.name)].reset_index()
+    five_recommend = five_recommend.drop(['index','id'],axis=1).rename(columns={'name':'Game Name', 
+                                                                                'steam_appid': 'Game Id',
+                                                                                'genre':'Genre', 
+                                                                                'final_eur':'Price', 
+                                                                                'user_score':'Game Rating',
+                                                                                'short_description':'Game Description'}
     
-    return five_descriptiton
+    return five_recommend
 
 #####################################################
+
 
 tfidf = TfidfVectorizer()
 #fitting all the words that we have for all genres using the TF-IDF approach
