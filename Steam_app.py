@@ -167,7 +167,7 @@ with col1:
    categories_select = categories_count[categories_count.year.isin(select_year)]
    categories_select = categories_select.sort_values('count',ascending=False)
    #plot
-   bar_plot(categories_select,'category','Game Categories','#2a475e')
+   bar_plot(categories_select,'category','Games Categories','#2a475e')
     
 with col2:
     st.subheader('What are the games with the biggest average playtime?')
@@ -184,7 +184,7 @@ with col1:
   st.subheader('What are the most common genres?')
   genres_select = genres_count[genres_count.year.isin(select_year)].sort_values('count',ascending=False)
   #plot 
-  bar_plot(genres_select,'genre','Game Genres','#2a475e')
+  bar_plot(genres_select,'genre','Games Genres','#2a475e')
 
 with col2:
   st.subheader("Who are the game's developers?")
@@ -193,7 +193,7 @@ with col2:
   developer_count = developer_count.rename(columns={'index':'developer', 'developer':'count'}).sort_values('count'
                                                                                                            ,ascending=False).head(15)
   #plot
-  bar_plot(developer_count,'developer','Game Developers Companies','#c7d5e0')
+  bar_plot(developer_count,'developer','Games Developers Companies','#c7d5e0')
 
 with col1:
     st.subheader('Who are the games publishers?')
@@ -203,13 +203,22 @@ with col1:
                                                                                                             ,ascending=False).head(15)
  
     #plot
-    bar_plot(publisher_count,'publisher','Game Publishers Companies','#66c0f4')
+    bar_plot(publisher_count,'publisher','Games Publishers Companies','#66c0f4')
  
 
 ############################
 # Second Block
 ############################
+
 st.header("**What's your favorite Steam game?**")
+
+"""
+This second part is a recommendation system. That's a machine learning model. 
+This model was created based on the user's scores and genres of each game. 
+At first, you can find some information about the games you like. 
+Then you can get the top five games recommendations. But remember that you can find only ***Steam*** Games!
+
+"""
 
 st.header("**Type the name of your favorite Steam Game?**")
 #st.sidebar.header("**Type the name of your favorite Steam Game?**")
