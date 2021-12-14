@@ -31,6 +31,8 @@ warnings.filterwarnings('ignore')
 
 #########################
 
+title_image = Image.open("games_image.jpg")
+st.image(title_image)
 
 #############################
 # Plots Functions
@@ -63,7 +65,7 @@ def pie_plot(df,column_name):
 st.set_page_config(page_title="Steam Analysis Dashboard ", 
                    layout='wide')
                    
-st.title("Steam Analysis")
+st.title("What game should I play?")
 """
 Steam is one of the biggest video game digital distribution services nowadays. Their services include: installation and automatic updating of games, digital rights management (DRM), server hosting, video streaming, social networking services, cloud storage, and in-game voice and chat functionality.
 On this page, you can see the results of the exploratory data analysis (EDA) and a recommendation system created from a 'Steam Dataset". This dataset has 40.584 game entrances of games released between 1998 and November 2021. ***Enjoy!!!***
