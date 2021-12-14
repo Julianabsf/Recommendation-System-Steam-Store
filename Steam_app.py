@@ -111,6 +111,7 @@ You can see it for all the years of the dataset, or you can filter for the years
 
 """
 
+steam_data = steam_data.sort_values(release_year, ascending=False)
 ####Select multiple years
 all_years = steam_data.release_year.unique().tolist()
 #st.sidebar.subheader('**Select the years you want to explore:**')
