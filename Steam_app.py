@@ -228,7 +228,7 @@ games_options = st.selectbox('', game_names)
 #games_options = st.sidebar.selectbox('', game_names)
 selected_game = steam_info[steam_info['Game Name']  == games_options]
 #selected_game
-st.table(selected_game)
+st.table(selected_game, index=False)
 
 
 ############################
