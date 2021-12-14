@@ -115,8 +115,6 @@ You can see it for all the years of the dataset, or you can filter for the years
 steam_data = steam_data.sort_values('release_year', ascending=False)
 
 all_years = steam_data.release_year.unique().tolist()
-#st.sidebar.subheader('**Select the years you want to explore:**')
-#select_year = st.sidebar.multiselect(' ',options=all_years, default=all_years)
 st.subheader('**Select the years you want to explore:**')
 select_year = st.multiselect(' ',options=all_years, default=all_years)
 
@@ -186,7 +184,7 @@ with col1:
   st.subheader('What are the most common genres?')
   genres_select = genres_count[genres_count.year.isin(select_year)].sort_values('count',ascending=False)
   #plot 
-  bar_plot(genres_count,'genre','Game Genres','#2a475e')
+  bar_plot(genres_select,'genre','Game Genres','#2a475e')
 
 with col2:
   st.subheader("Who are the game's developers?")
