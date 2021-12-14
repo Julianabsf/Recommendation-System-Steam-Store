@@ -30,6 +30,8 @@ warnings.filterwarnings('ignore')
 
 
 #########################
+st.set_page_config(page_title="Steam Analysis Dashboard ", 
+                   layout='wide')
 
 #############################
 # Plots Functions
@@ -65,9 +67,6 @@ st.image(image, caption='Sunrise by the mountains')
 #############################
 # Introduction
 #############################
-
-st.set_page_config(page_title="Steam Analysis Dashboard ", 
-                   layout='wide')
                    
 st.title("What game should I play?")
 """
