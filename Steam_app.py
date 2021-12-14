@@ -116,10 +116,10 @@ steam_data = steam_data.sort_values('release_year', ascending=False)
 
 #all_years = steam_data.release_year.unique().tolist()
 st.subheader('**Select the years you want to explore:**')
-select_year = st.slider( 'Select a range of years',1998, 2022,(1998,2022))
+#select_year = st.slider( 'Select a range of years',1998, 2022,(1998,2022))
 #st.write('Select years:', select_year[0])
 
-#select_year = st.multiselect(' ',options=all_years, default=all_years)
+select_year = st.multiselect(' ',options=all_years, default=all_years)
 
 # Static plots in two columns
 col1, col2 = st.beta_columns(2)
