@@ -118,7 +118,7 @@ steam_data = steam_data.sort_values('release_year', ascending=False)
 
 all_years = steam_data.release_year.unique().tolist()
 st.subheader('**Select the years you want to explore:**')
-values = st.slider( 'Select a range of values',1998, 2021)
+select_year = st.slider( 'Select a range of values',1998, 2021)
 st.write('Values:', values[0])
 
 #select_year = st.multiselect(' ',options=all_years, default=all_years)
