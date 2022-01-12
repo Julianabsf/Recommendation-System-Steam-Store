@@ -15,9 +15,7 @@ I build a machine learning model to recommend games based on similarity in terms
 To present the result I create an APP on Streamlit, where I interactively displayed all the information,
 then you can play with all the results, and extract some information. 
 
-On the link below you can find my web page with my presentation, created on Readymag! On that, you have a link for the 
+On the link (https://readymag.com/u4218013253/3273935/) you can find my web page with my presentation, created on Readymag! On that, you have a link for the 
 Streamlit app.
 
 Have fun!! 
-
-link: https://readymag.com/u4218013253/3273935/
